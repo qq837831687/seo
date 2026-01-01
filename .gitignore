@@ -11,6 +11,7 @@ ENV/
 # 输出文件
 output/
 history/
+charts/
 logs/
 
 # macOS

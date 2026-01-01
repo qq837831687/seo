@@ -506,7 +506,26 @@ def main():
     # 6. 保存历史数据
     save_history(all_keywords, hot_topics)
 
-    # 7. 打印预览
+    # 7. 生成可视化图表
+    try:
+        from charts import KeywordVisualizer
+
+        stats = {
+            "total": len(sorted_keywords),
+            "high_score": sum(1 for _, d in sorted_keywords if d['score'] >= 8),
+            "avg_score": sum(d['score'] for _, d in sorted_keywords) / len(sorted_keywords)
+        }
+
+        visualizer = KeywordVisualizer(output_dir=f"{OUTPUT_DIR}/charts")
+        charts = visualizer.generate_all_charts(sorted_keywords, stats)
+
+    except ImportError as e:
+        print(f"\n⚠️  可视化模块导入失败: {e}")
+        print("💡 如需生成图表，请运行: pip install matplotlib seaborn wordcloud")
+    except Exception as e:
+        print(f"\n⚠️  图表生成失败: {e}")
+
+    # 8. 打印预览
     elapsed = time.time() - start_time
     print("\n\n" + "=" * 70)
     print("🎉 数据挖掘完成！")
