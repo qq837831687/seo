@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-养生/饮食热点 + SEO长尾词挖掘器 v2.0
-多数据源抓取 + 意图识别 + 评分排序 + 历史对比
+养生/饮食热点 + SEO长尾词挖掘器 v2.1
+多数据源抓取 + 意图识别 + 评分排序 + 历史对比 + 数据可视化 + 增强版网络抓取
 """
 
 import requests
@@ -16,6 +16,18 @@ from datetime import datetime
 import csv
 import os
 from pathlib import Path
+
+# 导入增强版网络抓取模块
+try:
+    from web_fetcher import (
+        BaiduFetcher, BilibiliFetcher, TaobaoFetcher,
+        ZhihuFetcher, WeiboFetcher,
+        GoogleAutoCompleteFetcher, BingAutoCompleteFetcher
+    )
+    USE_ENHANCED_FETCHER = True
+except ImportError:
+    USE_ENHANCED_FETCHER = False
+    print("⚠️  未找到web_fetcher模块，使用基础抓取功能")
 
 # ==================== 配置 ====================
 SEED_KEYWORDS = [
@@ -315,6 +327,74 @@ def fetch_weibo_hot():
     return []
 
 
+# ==================== 增强版抓取 ====================
+# 尝试导入并使用增强版抓取器
+if USE_ENHANCED_FETCHER:
+    try:
+        baidu_enhanced = BaiduFetcher()
+        bili_enhanced = BilibiliFetcher()
+        taobao_enhanced = TaobaoFetcher()
+        zhihu_enhanced = ZhihuFetcher()
+        weibo_enhanced = WeiboFetcher()
+        google_enhanced = GoogleAutoCompleteFetcher()
+        bing_enhanced = BingAutoCompleteFetcher()
+        print("✅ 增强版网络抓取器已启用")
+    except Exception as e:
+        print(f"⚠️  增强版抓取器初始化失败: {e}")
+        USE_ENHANCED_FETCHER = False
+
+
+def fetch_google_suggestions(keyword):
+    """Google自动补全（新增数据源）"""
+    if not USE_ENHANCED_FETCHER:
+        return []
+
+    return google_enhanced.fetch_suggestions(keyword)
+
+
+def fetch_bing_suggestions(keyword):
+    """Bing自动补全（新增数据源）"""
+    if not USE_ENHANCED_FETCHER:
+        return []
+
+    return bing_enhanced.fetch_suggestions(keyword)
+
+
+def fetch_baidu_enhanced(keyword):
+    """百度下拉词（增强版）"""
+    if USE_ENHANCED_FETCHER:
+        return baidu_enhanced.fetch_suggestions(keyword)
+    return fetch_baidu_suggestions(keyword)
+
+
+def fetch_bilibili_enhanced(keyword):
+    """B站搜索建议（增强版）"""
+    if USE_ENHANCED_FETCHER:
+        return bili_enhanced.fetch_suggestions(keyword)
+    return fetch_bilibili_suggestions(keyword)
+
+
+def fetch_taobao_enhanced(keyword):
+    """淘宝搜索建议（增强版）"""
+    if USE_ENHANCED_FETCHER:
+        return taobao_enhanced.fetch_suggestions(keyword)
+    return fetch_taobao_suggestions(keyword)
+
+
+def fetch_zhihu_enhanced():
+    """知乎热榜（增强版）"""
+    if USE_ENHANCED_FETCHER:
+        return zhihu_enhanced.fetch_hot_topics()
+    return fetch_zhihu_hot()
+
+
+def fetch_weibo_enhanced():
+    """微博热搜（增强版）"""
+    if USE_ENHANCED_FETCHER:
+        return weibo_enhanced.fetch_hot_topics()
+    return fetch_weibo_hot()
+
+
 # ==================== 备用数据生成 ====================
 def generate_fallback_keywords():
     """生成备用关键词"""
@@ -368,25 +448,49 @@ def main():
     for keyword in SEED_KEYWORDS:
         print(f"\n🌱 种子词: [{keyword}]")
 
-        # 多源并行
-        baidu_results = fetch_baidu_suggestions(keyword)
+        # 多源并行（使用增强版）
+        baidu_results = fetch_baidu_enhanced(keyword)
         for kw in baidu_results:
             if kw not in all_keywords:
                 all_keywords[kw] = {"sources": [], "score": 0, "intent": ""}
             all_keywords[kw]["sources"].append("百度")
 
-        bili_results = fetch_bilibili_suggestions(keyword)
+        bili_results = fetch_bilibili_enhanced(keyword)
         for kw in bili_results:
             if kw not in all_keywords:
                 all_keywords[kw] = {"sources": [], "score": 0, "intent": ""}
             all_keywords[kw]["sources"].append("B站")
 
-        taobao_results = fetch_taobao_suggestions(keyword)
+        taobao_results = fetch_taobao_enhanced(keyword)
         for kw in taobao_results:
+            # 淘宝可能返回列表或字符串
+            if isinstance(kw, list):
+                kw = kw[0] if kw else ""
             if isinstance(kw, str) and kw:
                 if kw not in all_keywords:
                     all_keywords[kw] = {"sources": [], "score": 0, "intent": ""}
                 all_keywords[kw]["sources"].append("淘宝")
+
+        # 新增：Google和Bing数据源
+        google_results = fetch_google_suggestions(keyword)
+        for kw in google_results:
+            # 确保是字符串
+            if isinstance(kw, list):
+                kw = kw[0] if kw else ""
+            if isinstance(kw, str) and kw:
+                if kw not in all_keywords:
+                    all_keywords[kw] = {"sources": [], "score": 0, "intent": ""}
+                all_keywords[kw]["sources"].append("Google")
+
+        bing_results = fetch_bing_suggestions(keyword)
+        for kw in bing_results:
+            # 确保是字符串
+            if isinstance(kw, list):
+                kw = kw[0] if kw else ""
+            if isinstance(kw, str) and kw:
+                if kw not in all_keywords:
+                    all_keywords[kw] = {"sources": [], "score": 0, "intent": ""}
+                all_keywords[kw]["sources"].append("Bing")
 
         time.sleep(random.uniform(0.5, 1.0))
 
@@ -394,12 +498,12 @@ def main():
     print("\n\n📊 第二阶段：抓取平台热榜")
     print("-" * 70)
 
-    zhihu_hot = fetch_zhihu_hot()
+    zhihu_hot = fetch_zhihu_enhanced()
     for title in zhihu_hot:
         if any(kw in title for kw in SEED_KEYWORDS):
             hot_topics.append({"title": title, "source": "知乎热榜", "angle": "争议/问题型"})
 
-    weibo_hot = fetch_weibo_hot()
+    weibo_hot = fetch_weibo_enhanced()
     if not weibo_hot:
         print("  ⚠️  微博热搜已跳过（反爬限制）")
     else:
