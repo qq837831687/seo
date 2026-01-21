@@ -14,6 +14,22 @@ from datetime import datetime, timedelta
 from typing import Dict, List, Optional, Any
 from enum import Enum
 import time
+import sys
+from pathlib import Path
+
+# 添加项目根目录到 Python 路径
+project_root = Path(__file__).parent.parent.parent
+sys.path.insert(0, str(project_root))
+
+# 导入真实的 Agent 实现
+from Agents.implementations.agent_2_impl import Agent2DeconstructionAnalyst
+from Agents.implementations.agent_3_impl import Agent3TopicArchitect
+from Agents.implementations.agents_4_5_6_7 import (
+    Agent4ContentArchitect,
+    Agent5ChiefReviewer,
+    Agent6ViralityForecaster,
+    Agent7HeadlineKing
+)
 
 
 # ============================================================================
@@ -537,27 +553,19 @@ class ArticleFactory:
         """
         调用 Agent 2: 爆款分析
 
-        实际实现时，这里应该调用真实的 Agent 2
-        这里提供模拟返回数据
+        现在调用真实的 Agent 2
         """
-        # TODO: 实际实现时调用真实的 Agent 2
-        return {
-            "viral_dna_card": {
-                "topic": topic,
-                "key_patterns": ["数字+痛点", "权威背书", "反常识"],
-                "emotional_hooks": ["健康焦虑", "家庭责任", "衰老恐惧"],
-            },
-            "key_patterns": [
-                "节气 + 食材 + 痛点",
-                "老中医的经验",
-                "90%的人不知道"
-            ],
-            "golden_sentences": [
-                "立春后，地里韭菜绿了",
-                "这可是春天养肝的第一菜",
-            ],
-            "keywords": [topic, "养生", "中医", "健康"],
-        }
+        # 创建 Agent 2 实例
+        agent = Agent2DeconstructionAnalyst(llm_caller=None)  # 使用模拟数据或传入 LLM caller
+
+        # 调用 Agent 2
+        result = agent.analyze_topic(
+            topic=topic,
+            target_audience=target_audience,
+            topic_source="USER_MANUAL"
+        )
+
+        return result
 
     def _call_agent_3(
         self,
@@ -568,28 +576,18 @@ class ArticleFactory:
         mode: str = "standard"
     ) -> Dict:
         """调用 Agent 3: 大纲设计"""
-        # TODO: 实际实现时调用真实的 Agent 3
-        return {
-            "title": f"{topic} - 文章大纲",
-            "structure": {
-                "opening": "场景引入 + 痛点共鸣",
-                "body": [
-                    "问题分析（中医理论）",
-                    "老李故事（亲身经历）",
-                    "实用方法（3-5条）",
-                    "饮食建议（具体食谱）",
-                ],
-                "closing": "总结 + 行动呼吁"
-            },
-            "content_blocks": [
-                {"section": "引入", "word_count": 300},
-                {"section": "分析", "word_count": 500},
-                {"section": "方法", "word_count": 800},
-                {"section": "食谱", "word_count": 400},
-                {"section": "总结", "word_count": 200},
-            ],
-            "emotional_arcs": ["焦虑", "共鸣", "希望", "行动"],
-        }
+        # 创建 Agent 3 实例
+        agent = Agent3TopicArchitect(llm_caller=None)
+
+        # 调用 Agent 3
+        result = agent.design_outline(
+            topic=topic,
+            viral_analysis=viral_analysis,
+            previous_outline=previous_outline,
+            revision_suggestions=revision_suggestions
+        )
+
+        return result
 
     def _call_agent_4(
         self,
@@ -602,17 +600,20 @@ class ArticleFactory:
         mode: str = "standard"
     ) -> Dict:
         """调用 Agent 4: 内容写作"""
-        # TODO: 实际实现时调用真实的 Agent 4
-        return {
-            "title": f"{topic} - 完整文章",
-            "content": f"这里是{topic}的完整文章内容...\n\n" * 20,
-            "word_count": 2400,
-            "sources": ["《随息居饮食谱》", "《医学衷中参西录》"],
-            "old_li_voice": [
-                "立春了，该'咬春'了",
-                "我这老寒腿开始预报天气了"
-            ],
-        }
+        # 创建 Agent 4 实例
+        agent = Agent4ContentArchitect(llm_caller=None)
+
+        # 调用 Agent 4
+        result = agent.write_article(
+            topic=topic,
+            outline=outline,
+            viral_analysis=viral_analysis,
+            custom_requirements=custom_requirements,
+            revision_suggestions=revision_suggestions,
+            optimization_suggestions=optimization_suggestions
+        )
+
+        return result
 
     def _call_agent_5(
         self,
@@ -620,16 +621,13 @@ class ArticleFactory:
         mode: str = "standard"
     ) -> Dict:
         """调用 Agent 5: 质量审核"""
-        # TODO: 实际实现时调用真实的 Agent 5
-        # 模拟通过
-        return {
-            "routing_decision": "APPROVED",
-            "reason": "质量符合标准",
-            "quality_score": 88,
-            "tone_compliance": 92,
-            "issues": [],
-            "suggestions": [],
-        }
+        # 创建 Agent 5 实例
+        agent = Agent5ChiefReviewer(llm_caller=None)
+
+        # 调用 Agent 5
+        result = agent.review_and_route(draft=draft, mode=mode)
+
+        return result
 
     def _call_agent_6(
         self,
@@ -637,22 +635,16 @@ class ArticleFactory:
         review_report: Dict
     ) -> Dict:
         """调用 Agent 6: 爆款预测"""
-        # TODO: 实际实现时调用真实的 Agent 6
-        return {
-            "virality_assessment": {
-                "emotion": 8,
-                "practicality": 9,
-                "social_currency": 7,
-                "novelty": 7,
-                "timeliness": 9,
-            },
-            "overall_score": 40,
-            "prediction": "HIGH_POTENTIAL",
-            "optimization_suggestions": [
-                "增加紧迫感",
-                "强化社交货币属性"
-            ],
-        }
+        # 创建 Agent 6 实例
+        agent = Agent6ViralityForecaster(llm_caller=None)
+
+        # 调用 Agent 6
+        result = agent.predict_virality(
+            draft=draft,
+            review_report=review_report
+        )
+
+        return result
 
     def _call_agent_7(
         self,
@@ -661,20 +653,17 @@ class ArticleFactory:
         mode: str = "standard"
     ) -> Dict:
         """调用 Agent 7: 标题生成"""
-        # TODO: 实际实现时调用真实的 Agent 7
-        return {
-            "generated": [
-                f"{draft['title']} - 标题1",
-                f"{draft['title']} - 标题2",
-                f"{draft['title']} - 标题3",
-            ],
-            "selected": [
-                {"title": "立春养肝第一菜，90%的人都吃错了", "ctr_prediction": 12.3},
-                {"title": "老中医的养肝方，比吃药还管用", "ctr_prediction": 11.8},
-                {"title": "春天别再吃这些了，伤肝又伤脾", "ctr_prediction": 10.9},
-            ],
-            "total_generated": 12,
-        }
+        # 创建 Agent 7 实例
+        agent = Agent7HeadlineKing(llm_caller=None)
+
+        # 调用 Agent 7
+        result = agent.generate_headlines(
+            draft=draft,
+            target_audience=target_audience,
+            mode=mode
+        )
+
+        return result
 
     # ========================================================================
     # 结果组装
@@ -684,11 +673,14 @@ class ArticleFactory:
         """组装最终结果"""
         draft = uco.data.get("draft", {})
         headlines = uco.data.get("headlines", {})
-        virality_assessment = uco.data.get("virality_assessment", {})
-        review_report = uco.data.get("review_report", {})
+        virality_assessment = uco.data.get("virality_assessment", {}) or {}  # 确保不是 None
+        review_report = uco.data.get("review_report", {}) or {}  # 确保不是 None
 
         # 选择最佳标题
-        best_title = headlines.get("selected", [{}])[0].get("title", draft.get("title", ""))
+        try:
+            best_title = headlines.get("selected", [{}])[0].get("title", draft.get("title", ""))
+        except (IndexError, TypeError, AttributeError):
+            best_title = draft.get("title", "未知标题")
 
         return {
             "success": True,
