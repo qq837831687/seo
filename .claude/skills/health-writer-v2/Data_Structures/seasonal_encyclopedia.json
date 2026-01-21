@@ -1,0 +1,697 @@
+{
+  "encyclopedia_id": "seasonal_health_encyclopedia_01",
+  "version": "1.0",
+  "last_updated": "2026-01-20T15:00:00Z",
+  "description": "时令养生百科 - 包含24节气与传统节日的养生指导",
+
+  "solar_terms": {
+    "spring": {
+      "lichun": {
+        "name": "立春",
+        "date_range": "2月3-5日",
+        "climate_features": {
+          "temperature": "乍暖还寒",
+          "humidity": "渐增",
+          "phenomenon": "东风解冻，蛰虫始振"
+        },
+        "body_impact": {
+          "organs": ["肝"],
+          "tcm_theory": "春对应肝，肝气生发",
+          "symptoms": ["春困", "情绪波动", "易怒"]
+        },
+        "health_focus": {
+          "primary": "养肝疏肝",
+          "secondary": ["健脾", "防风邪"],
+          "avoid": ["酸收", "寒凉"]
+        },
+        "dietary_recommendations": {
+          "foods": ["韭菜", "菠菜", "芹菜", "葱", "蒜"],
+          "recipes": ["韭菜炒鸡蛋", "菠菜拌豆干"],
+          "禁忌": ["酸味过多", "大补"]
+        },
+        "lifestyle_tips": [
+          "早睡早起，广步于庭",
+          "保持心情舒畅，戒怒",
+          "春捂秋冻，不要减衣太快"
+        ],
+        "old_li_voice": "立春后，地里韭菜绿了。这可是春天养肝的第一菜，但记住了，脾胃虚寒的少吃，炒个鸡蛋，又香又补。"
+      },
+      "yushui": {
+        "name": "雨水",
+        "date_range": "2月18-20日",
+        "climate_features": {
+          "temperature": "回升",
+          "humidity": "增大",
+          "phenomenon": "雪渐少，雨渐多"
+        },
+        "body_impact": {
+          "organs": ["脾", "胃"],
+          "tcm_theory": "湿气渐重，脾胃受困",
+          "symptoms": ["消化不良", "春困加重"]
+        },
+        "health_focus": {
+          "primary": "健脾祛湿",
+          "secondary": ["养胃", "疏肝"],
+          "avoid": ["生冷", "油腻"]
+        },
+        "dietary_recommendations": {
+          "foods": ["山药", "红枣", "生姜", "茯苓"],
+          "recipes": ["山药粥", "姜枣茶"],
+          "禁忌": ["生冷水果"]
+        },
+        "old_li_voice": "雨水湿气重，我这老寒腿又开始酸了。煮锅山药粥，加俩大枣，养胃又祛湿。"
+      },
+      "jingzhe": {
+        "name": "惊蛰",
+        "date_range": "3月5-7日",
+        "climate_features": {
+          "temperature": "明显回升",
+          "humidity": "适中",
+          "phenomenon": "春雷响，万物惊"
+        },
+        "body_impact": {
+          "organs": ["肝"],
+          "tcm_theory": "肝气旺盛，易上火",
+          "symptoms": ["易怒", "失眠", "过敏"]
+        },
+        "health_focus": {
+          "primary": "平肝潜阳",
+          "secondary": ["抗过敏", "安神"],
+          "avoid": ["辛辣", "饮酒"]
+        },
+        "dietary_recommendations": {
+          "foods": ["梨", "百合", "银耳", "芹菜"],
+          "recipes": ["银耳百合汤", "芹菜炒百合"],
+          "禁忌": ["羊肉", "辣椒"]
+        },
+        "lifestyle_tips": [
+          "预防春季过敏",
+          "调节情绪，避免发怒",
+          "早睡养肝"
+        ],
+        "old_li_voice": "惊蛰一声雷，你看那些小孩子就开始闹腾了。这时候肝火旺，我推荐喝点银耳百合汤，清火又安神。"
+      },
+      "chunfen": {
+        "name": "春分",
+        "date_range": "3月20-22日",
+        "climate_features": {
+          "temperature": "温和",
+          "humidity": "适中",
+          "phenomenon": "昼夜平分，阴阳平衡"
+        },
+        "body_impact": {
+          "organs": ["肝", "脾", "肾"],
+          "tcm_theory": "阴阳平衡时期",
+          "symptoms": ["血压波动", "情绪不稳"]
+        },
+        "health_focus": {
+          "primary": "调和阴阳",
+          "secondary": ["养肝", "健脾", "补肾"],
+          "avoid": ["大寒大热"]
+        },
+        "dietary_recommendations": {
+          "foods": ["枸杞", "核桃", "红枣", "山药"],
+          "recipes": ["枸杞红枣茶", "核桃粥"],
+          "禁忌": ["偏寒偏热"]
+        },
+        "old_li_voice": "春分这天昼夜一样长，人也要跟着自然走，阴阳平衡。别光补不泻，也别光泻不补，中庸最好。"
+      }
+    },
+    "summer": {
+      "lixia": {
+        "name": "立夏",
+        "date_range": "5月5-7日",
+        "climate_features": {
+          "temperature": "明显升高",
+          "humidity": "增大",
+          "phenomenon": "万物繁茂"
+        },
+        "body_impact": {
+          "organs": ["心"],
+          "tcm_theory": "夏对应心，心火旺盛",
+          "symptoms": ["心烦", "失眠", "口舌生疮"]
+        },
+        "health_focus": {
+          "primary": "养心安神",
+          "secondary": ["健脾祛湿", "清热"],
+          "avoid": ["大补", "辛辣"]
+        },
+        "dietary_recommendations": {
+          "foods": ["苦瓜", "莲子", "绿豆", "西瓜"],
+          "recipes": ["绿豆汤", "莲子百合粥"],
+          "禁忌": ["油腻", "热性食物"]
+        },
+        "old_li_voice": "立夏了，天儿开始热了。老话说要'苦夏吃苦'，苦瓜虽苦，清心火，该吃还得吃。"
+      },
+      "mangzhong": {
+        "name": "芒种",
+        "date_range": "6月5-7日",
+        "climate_features": {
+          "temperature": "炎热",
+          "humidity": "很高",
+          "phenomenon": "麦收，梅雨季节"
+        },
+        "body_impact": {
+          "organs": ["脾", "胃"],
+          "tcm_theory": "湿气重，困脾",
+          "symptoms": ["困倦", "食欲不振", "身体沉重"]
+        },
+        "health_focus": {
+          "primary": "健脾祛湿",
+          "secondary": ["开胃", "防暑"],
+          "avoid": ["生冷", "甜腻"]
+        },
+        "dietary_recommendations": {
+          "foods": ["薏米", "红豆", "冬瓜", "生姜"],
+          "recipes": ["薏米红豆粥", "冬瓜汤"],
+          "禁忌": ["冷饮", "冰镇西瓜"]
+        },
+        "old_li_voice": "芒种湿气最重，我感觉像背着几十斤麦子。喝碗薏米红豆汤，去去湿，身体轻快点。"
+      },
+      "xiaoshu": {
+        "name": "小暑",
+        "date_range": "7月7-8日",
+        "climate_features": {
+          "temperature": "炎热",
+          "humidity": "闷热",
+          "phenomenon": "入伏前夕"
+        },
+        "body_impact": {
+          "organs": ["心", "脾"],
+          "tcm_theory": "湿热交蒸",
+          "symptoms": ["中暑风险", "胸闷", "头晕"]
+        },
+        "health_focus": {
+          "primary": "清热解暑",
+          "secondary": ["健脾", "养心"],
+          "avoid": ["贪凉", "大汗后吹风"]
+        },
+        "dietary_recommendations": {
+          "foods": ["绿豆", "苦瓜", "丝瓜", "冬瓜"],
+          "recipes": ["绿豆百合汤", "冬瓜排骨汤"],
+          "禁忌": ["冰镇饮料", "空调房贪睡"]
+        },
+        "old_li_voice": "小暑大暑，暑气最盛。我当年在车间里，盐汽水一天喝三瓶。现在退休了，绿豆汤熬好，放凉了再喝，别冰镇的。"
+      },
+      "dashu": {
+        "name": "大暑",
+        "date_range": "7月22-24日",
+        "climate_features": {
+          "temperature": "最热",
+          "humidity": "闷热",
+          "phenomenon": "一年中最热时候"
+        },
+        "body_impact": {
+          "organs": ["心", "肾"],
+          "tcm_theory": "湿热耗气伤阴",
+          "symptoms": ["大汗淋漓", "心悸", "乏力"]
+        },
+        "health_focus": {
+          "primary": "清热解暑，补气养阴",
+          "secondary": ["护心", "固肾"],
+          "avoid": ["贪凉", "大汗", "过度劳累"]
+        },
+        "dietary_recommendations": {
+          "foods": ["绿豆", "冬瓜", "苦瓜", "西洋参", "石斛"],
+          "recipes": ["绿豆汤", "冬瓜老鸭汤", "西洋参茶"],
+          "禁忌": ["冰镇啤酒", "大补药"]
+        },
+        "lifestyle_tips": [
+          "避免长时间暴晒",
+          "适当午休，但不超过1小时",
+          "多喝温开水，少喝冰饮"
+        ],
+        "old_li_voice": "大暑这天最热，老话要'冬病夏治'。但这不是让你们晒太阳，是说有些老毛病，夏天治最好。"
+      }
+    },
+    "autumn": {
+      "liqiu": {
+        "name": "立秋",
+        "date_range": "8月7-9日",
+        "climate_features": {
+          "temperature": "开始下降",
+          "humidity": "减小",
+          "phenomenon": "秋高气爽"
+        },
+        "body_impact": {
+          "organs": ["肺"],
+          "tcm_theory": "秋对应肺，肺气始收",
+          "symptoms": ["口干舌燥", "皮肤干", "咳嗽"]
+        },
+        "health_focus": {
+          "primary": "养阴润肺",
+          "secondary": ["健脾", "防燥"],
+          "avoid": ["辛辣", "羊肉"]
+        },
+        "dietary_recommendations": {
+          "foods": ["梨", "百合", "银耳", "蜂蜜", "莲藕"],
+          "recipes": ["银耳百合汤", "冰糖雪梨", "莲藕排骨汤"],
+          "禁忌": ["生姜", "辣椒"]
+        },
+        "old_li_voice": "立秋了，天儿开始燥了。我老伴以前这时候总熬梨汤，说润肺。现在她不在了，我自己也学会这一招了。"
+      },
+      "bailu": {
+        "name": "白露",
+        "date_range": "9月7-9日",
+        "climate_features": {
+          "temperature": "明显下降",
+          "humidity": "小",
+          "phenomenon": "露水出现，昼夜温差大"
+        },
+        "body_impact": {
+          "organs": ["肺"],
+          "tcm_theory": "燥邪伤肺",
+          "symptoms": ["干咳", "咽干", "皮肤干燥"]
+        },
+        "health_focus": {
+          "primary": "润燥养肺",
+          "secondary": ["防寒", "养阴"],
+          "avoid": ["辛辣", "生冷"]
+        },
+        "dietary_recommendations": {
+          "foods": ["梨", "百合", "银耳", "山药", "核桃"],
+          "recipes": ["川贝雪梨", "山药百合粥"],
+          "禁忌": ["生姜", "大蒜"]
+        },
+        "lifestyle_tips": [
+          "早晚添衣，保护阳气",
+          "早睡早起，敛阳养阴",
+          "避免贪凉"
+        ],
+        "old_li_voice": "白露过后，早晚凉了。老话说'白露身不露',就是说别再光膀子了，小心着凉。"
+      },
+      "hanlu": {
+        "name": "寒露",
+        "date_range": "10月8-9日",
+        "climate_features": {
+          "temperature": "继续下降",
+          "humidity": "小",
+          "phenomenon": "露水更冷，霜降将至"
+        },
+        "body_impact": {
+          "organs": ["肺", "肾"],
+          "tcm_theory": "寒邪伤阳",
+          "symptoms": ["手脚冰凉", "关节痛", "腰膝酸软"]
+        },
+        "health_focus": {
+          "primary": "温阳散寒，润肺养阴",
+          "secondary": ["补肾", "强腰膝"],
+          "avoid": ["生冷", "贪凉"]
+        },
+        "dietary_recommendations": {
+          "foods": ["羊肉", "核桃", "栗子", "生姜", "大枣"],
+          "recipes": ["羊肉萝卜汤", "栗子粥", "姜枣茶"],
+          "禁忌": ["生冷瓜果", "冰饮"]
+        },
+        "lifestyle_tips": [
+          "注意保暖，尤其是脚部",
+          "泡脚温阳",
+          "早睡晚起，必待日光"
+        ],
+        "old_li_voice": "寒露了，我得穿上羊毛衫了。晚上泡个脚，那叫一个舒坦。脚暖了，全身都暖和。"
+      },
+      "shuangjiang": {
+        "name": "霜降",
+        "date_range": "10月23-24日",
+        "climate_features": {
+          "temperature": "低",
+          "humidity": "小",
+          "phenomenon": "开始下霜"
+        },
+        "body_impact": {
+          "organs": ["肺", "肾"],
+          "tcm_theory": "燥冷伤肺",
+          "symptoms": ["干咳加重", "关节疼痛", "胃寒"]
+        },
+        "health_focus": {
+          "primary": "温阳润肺",
+          "secondary": ["补肾", "强筋骨"],
+          "avoid": ["生冷", "寒凉"]
+        },
+        "dietary_recommendations": {
+          "foods": ["柿子", "栗子", "核桃", "羊肉", "生姜"],
+          "recipes": ["栗子烧肉", "羊肉萝卜汤", "姜茶"],
+          "禁忌": ["生冷瓜果", "螃蟹"]
+        },
+        "old_li_voice": "霜降了，该进补了。老话讲'一年补透透，不如补霜降'。炖锅羊肉萝卜汤，又暖和又养人。"
+      }
+    },
+    "winter": {
+      "lidong": {
+        "name": "立冬",
+        "date_range": "11月7-8日",
+        "climate_features": {
+          "temperature": "寒冷",
+          "humidity": "小",
+          "phenomenon": "冬季开始，万物收藏"
+        },
+        "body_impact": {
+          "organs": ["肾"],
+          "tcm_theory": "冬对应肾，阳气潜藏",
+          "symptoms": ["怕冷", "手脚冰凉", "腰膝酸软"]
+        },
+        "health_focus": {
+          "primary": "补肾助阳，温养脏腑",
+          "secondary": ["藏精", "护阳"],
+          "avoid": ["生冷", "过度劳累", "出汗过多"]
+        },
+        "dietary_recommendations": {
+          "foods": ["羊肉", "核桃", "栗子", "韭菜", "生姜", "大枣"],
+          "recipes": ["羊肉汤", "栗子烧鸡", "姜茶"],
+          "禁忌": ["生冷瓜果", "冰饮", "绿豆汤"]
+        },
+        "lifestyle_tips": [
+          "早睡晚起，必待日光",
+          "注意保暖，尤其是脚部和腰部",
+          "适当运动，但不可大汗淋漓",
+          "节制房事，藏精养肾"
+        ],
+        "old_li_voice": "立冬了，该'藏'起来了。老话讲'冬藏精，春不病'。多穿点，别逞强，年轻时的身体老时候才知道珍惜。"
+      },
+      "dongzhi": {
+        "name": "冬至",
+        "date_range": "12月21-23日",
+        "climate_features": {
+          "temperature": "最冷",
+          "humidity": "小",
+          "phenomenon": "阴极之至，阳气始生"
+        },
+        "body_impact": {
+          "organs": ["肾", "脾"],
+          "tcm_theory": "阳气最弱，但也开始萌芽",
+          "symptoms": ["极度怕冷", "阳虚", "消化功能下降"]
+        },
+        "health_focus": {
+          "primary": "温补肾阳，健脾养胃",
+          "secondary": ["护阳", "藏精"],
+          "avoid": ["生冷", "出汗", "过度劳累"]
+        },
+        "dietary_recommendations": {
+          "foods": ["羊肉", "牛肉", "核桃", "韭菜", "生姜", "大枣", "桂圆"],
+          "recipes": ["羊肉汤", "饺子", "姜枣桂圆茶"],
+          "禁忌": ["生冷", "绿豆", "萝卜"]
+        },
+        "lifestyle_tips": [
+          "冬至大如年，适当进补",
+          "保持心情舒畅，避免情绪过度",
+          "保暖第一，尤其是脚部",
+          "节制房事，固摄精气"
+        ],
+        "old_li_voice": "冬至这一天，老话要吃饺子。为啥？因为饺子像元宝，吃了来年财源滚滚。更重要的是，饺子有肉有菜，营养全面。"
+      },
+      "xiaohan": {
+        "name": "小寒",
+        "date_range": "1月5-7日",
+        "climate_features": {
+          "temperature": "极冷",
+          "humidity": "小",
+          "phenomenon": "严寒期"
+        },
+        "body_impact": {
+          "organs": ["肾", "心"],
+          "tcm_theory": "寒邪伤阳，心血运行不畅",
+          "symptoms": ["手脚冰凉", "关节痛", "心悸"]
+        },
+        "health_focus": {
+          "primary": "温阳散寒，活血通络",
+          "secondary": ["养心", "护肾"],
+          "avoid": ["生冷", "外出受风", "大汗"]
+        },
+        "dietary_recommendations": {
+          "foods": ["羊肉", "牛肉", "核桃", "韭菜", "生姜", "辣椒"],
+          "recipes": ["羊肉汤", "牛肉炖萝卜", "姜茶"],
+          "禁忌": ["生冷", "绿豆", "冬瓜"]
+        },
+        "lifestyle_tips": [
+          "注意保暖，尤其是头部和手脚",
+          "适当运动，促进血液循环",
+          "保持心情愉快，避免抑郁"
+        ],
+        "old_li_voice": "小寒大寒，冻死老汉。这两天最冷，出门全副武装，帽子手套围巾，一样不能少。"
+      },
+      "dahan": {
+        "name": "大寒",
+        "date_range": "1月20-21日",
+        "climate_features": {
+          "temperature": "最冷",
+          "humidity": "小",
+          "phenomenon": "寒气之逆极，故为大寒"
+        },
+        "body_impact": {
+          "organs": ["肾", "脾", "心"],
+          "tcm_theory": "寒邪极盛，阳气极虚",
+          "symptoms": ["极度怕冷", "关节僵硬", "消化不良"]
+        },
+        "health_focus": {
+          "primary": "温阳补肾，健脾养心",
+          "secondary": ["防寒", "藏精"],
+          "avoid": ["生冷", "外出", "大汗"]
+        },
+        "dietary_recommendations": {
+          "foods": ["羊肉", "牛肉", "鸡肉", "核桃", "韭菜", "生姜"],
+          "recipes": ["羊肉汤", "鸡汤", "牛肉炖萝卜"],
+          "禁忌": ["生冷", "绿豆", "冬瓜", "西瓜"]
+        },
+        "lifestyle_tips": [
+          "减少外出，待在温暖室内",
+          "保持室内湿度，避免过于干燥",
+          "适当运动，不可大汗淋漓",
+          "节制房事，固摄精气"
+        ],
+        "old_li_voice": "大寒是一年最冷的时候，老话要'猫冬'。就是少出去，在家里歇着，等立春了再活动。"
+      }
+    }
+  },
+
+  "traditional_festivals": {
+    "spring_festival": {
+      "name": "春节",
+      "date_range": "农历正月初一",
+      "climate_features": {
+        "temperature": "冬末春初",
+        "characteristics": "辞旧迎新，家人团聚"
+      },
+      "customs_impact": {
+        "dietary": "大鱼大肉，暴饮暴食",
+        "sleep": "守岁熬夜，作息紊乱",
+        "emotion": "团聚喜悦，但也伴随离别焦虑",
+        "social": "走亲访友，社交频繁"
+      },
+      "health_impact": {
+        "physical": ["肠胃负担", "睡眠不足", "体力消耗"],
+        "mental": ["兴奋过度", "节后空虚", "思亲伤神"]
+      },
+      "health_focus": {
+        "pre_festival": "防寒保暖，增强免疫力",
+        "during_festival": "饮食有节，作息规律",
+        "post_festival": "消食导滞，调整作息"
+      },
+      "content_strategy": {
+        "before": "春节前养生指南：如何避免节前累垮",
+        "during": "春节吃什么最健康？老李的除夕菜单",
+        "after": "节后综合征：3招消食去腻，恢复元气"
+      },
+      "old_li_voice": "过年了，大鱼大肉肯定少不了。但记住了，吃到七八分饱就停。别让好年变成'熬人年'，节后受罪的是自己。"
+    },
+    "lantern_festival": {
+      "name": "元宵节",
+      "date_range": "农历正月十五",
+      "climate_features": {
+        "temperature": "冬末",
+        "characteristics": "元宵团圆，赏灯
+      },
+      "customs_impact": {
+        "dietary": "吃元宵（糯米，难消化）",
+        "social": "赏灯游街"
+      },
+      "health_focus": {
+        "primary": "消食导滞",
+        "secondary": ["健脾胃", "助消化"],
+        "avoid": ["多吃元宵", "熬夜"]
+      },
+      "old_li_voice": "元宵节吃元宵，寓意团团圆圆。但元宵不好消化，脾胃虚的少吃，最多吃三五个就够。"
+    },
+    "qingming_festival": {
+      "name": "清明节",
+      "date_range": "公历4月4-6日",
+      "climate_features": {
+        "temperature": "春暖花开",
+        "characteristics": "祭祖扫墓，踏青赏春"
+      },
+      "customs_impact": {
+        "emotion": "缅怀先人，情绪低落",
+        "activity": "踏青、郊游"
+      },
+      "health_focus": {
+        "primary": "疏肝理气，调节情绪",
+        "secondary": ["防过敏", "防风寒"],
+        "avoid": ["过度悲伤", "着凉"]
+      },
+      "content_strategy": {
+        "emotion": "清明节心情低落？老李教你3招疏肝解郁",
+        "diet": "清明踏青带什么吃的？老李的春游菜单"
+      },
+      "old_li_voice": "清明节扫墓，想起故人，心里难免难受。但活着的人还要好好活，该吃吃该喝喝，别让自己太苦了。"
+    },
+    "dragon_boat_festival": {
+      "name": "端午节",
+      "date_range": "农历五月初五",
+      "climate_features": {
+        "temperature": "初夏",
+        "characteristics": "湿热渐重，端午节"
+      },
+      "customs_impact": {
+        "dietary": "吃粽子（糯米，难消化）",
+        "activity": "赛龙舟，挂艾草"
+      },
+      "health_focus": {
+        "primary": "健脾祛湿，清热解毒",
+        "secondary": ["防暑", "防病"],
+        "avoid": ["多吃粽子", "贪凉"]
+      },
+      "content_strategy": {
+        "diet": "端午节吃粽子不长胖？老李有妙招",
+        "health": "端午前后湿热重，这3种食物要多吃"
+      },
+      "old_li_voice": "端午节吃粽子是传统，但粽子不好消化。我一次最多吃一个，配着茶水下，慢慢吃。"
+    },
+    "mid_autumn_festival": {
+      "name": "中秋节",
+      "date_range": "农历八月十五",
+      "climate_features": {
+        "temperature": "秋初",
+        "characteristics": "秋高气爽，月圆人团圆"
+      },
+      "customs_impact": {
+        "dietary": "吃月饼（高糖高油）",
+        "emotion": "思乡思亲，团圆喜悦",
+        "activity": "赏月（夜凉）"
+      },
+      "health_impact": {
+        "physical": ["血糖波动", "肠胃负担", "秋燥"],
+        "mental": ["思乡伤神", "团聚后的分离焦虑"]
+      },
+      "health_focus": {
+        "primary": "抗糖护眼，润肺防燥",
+        "secondary": ["消食导滞", "情志调节"],
+        "avoid": ["多吃月饼", "熬夜赏月", "秋燥饮食"]
+      },
+      "content_strategy": {
+        "before": "中秋月饼怎么吃不长胖？老李的3个原则",
+        "during": "赏月时别忘了添件衣服，防秋寒",
+        "after": "节后血糖飙升？老李教你3招稳血糖"
+      },
+      "old_li_voice": "中秋节月饼甜，但别贪嘴。我血糖有点高，每次只吃四分之一，尝个味儿就行了。"
+    },
+    "double_ninth": {
+      "name": "重阳节",
+      "date_range": "农历九月初九",
+      "climate_features": {
+        "temperature": "深秋",
+        "characteristics": "登高望远，敬老尊老"
+      },
+      "customs_impact": {
+        "activity": "登高，插茱萸",
+        "emotion": "敬老思亲
+      },
+      "health_focus": {
+        "primary": "养肺润燥，护关节",
+        "secondary": ["情志养生", "敬老"],
+        "avoid": ["登高过度", "悲秋伤神"]
+      },
+      "old_li_voice": "重阳节登高，年轻时爬几个小时不累，现在走几步就喘。老了就要服老，别逞强。"
+    }
+  },
+
+  "modern_festivals": {
+    "valentines_day": {
+      "name": "情人节",
+      "date": "2月14日",
+      "target_audience": ["情侣", "单身人士"],
+      "psychological_stress": ["恋爱焦虑", "单身压力", "孤独感"],
+      "health_focus": {
+        "primary": "情志养生",
+        "secondary": ["心理疏导", "情绪管理"],
+        "topics": ["单身如何过情人节", "情侣相处养生指南"]
+      },
+      "old_li_voice": "年轻人过情人节，我们老夫老妻也凑热闹。我老伴给我煮了碗红豆汤，说日子要过，仪式感要有。"
+    },
+    "national_day": {
+      "name": "国庆节",
+      "date": "10月1日",
+      "customs_impact": {
+        "activity": "长假旅行，聚餐熬夜",
+        "dietary": "暴饮暴食，作息紊乱"
+      },
+      "health_focus": {
+        "pre": "长假前如何准备身体",
+        "during": "旅行养生指南",
+        "post": "节后综合征修复"
+      },
+      "old_li_voice": "国庆长假，出去玩的别太疯。我年轻时也爱出去浪，现在知道了，在家歇着挺好。"
+    },
+    "single_day": {
+      "name": "光棍节",
+      "date": "11月11日",
+      "psychological_stress": ["单身焦虑", "社会压力"],
+      "health_focus": {
+        "primary": "情志养生",
+        "secondary": ["心理疏导", "自我关怀"],
+        "topics": ["单身也精彩", "如何享受独处"]
+      },
+      "old_li_voice": "光棍节咋了？一个人也要好好过。我自己煮碗面，加个荷包蛋，照样吃得香。"
+    },
+    "new_years_eve": {
+      "name": "跨年夜",
+      "date": "12月31日晚",
+      "customs_impact": {
+        "activity": "熬夜守岁",
+        "emotion": "辞旧迎新，希望与焦虑并存"
+      },
+      "health_focus": {
+        "primary": "作息调节",
+        "secondary": ["情绪管理", "熬夜补偿"],
+        "topics": ["熬夜后如何补救", "新年健康规划"]
+      },
+      "old_li_voice": "跨年夜守岁，年轻人熬得起，我们老骨头熬不起。12点一到，我就睡觉了，新年第一天精神好。"
+    }
+  },
+
+  "anniversaries": {
+    "world_health_day": {
+      "name": "世界卫生日",
+      "date": "4月7日",
+      "theme": "健康生活",
+      "health_focus": "健康生活方式",
+      "content_angle": "从老李的健康习惯谈起"
+    },
+    "national_elderly_day": {
+      "name": "全国老年节",
+      "date": "农历九月初九（重阳节）",
+      "theme": "敬老爱老",
+      "health_focus": "老年养生，防衰老",
+      "content_angle": "老李的老年养生经验"
+    },
+    "world_heart_day": {
+      "name": "世界心脏日",
+      "date": "9月29日",
+      "theme": "心脏健康",
+      "health_focus": "心脑血管保护",
+      "content_angle": "预防心梗、脑梗"
+    },
+    "world_diabetes_day": {
+      "name": "世界糖尿病日",
+      "date": "11月14日",
+      "theme": "糖尿病防控",
+      "health_focus": "血糖管理，预防糖尿病",
+      "content_angle": "老李的血糖管理经验"
+    },
+    "world_no_tobacco_day": {
+      "name": "世界无烟日",
+      "date": "5月31日",
+      "theme": "控烟",
+      "health_focus": "戒烟，肺部健康",
+      "content_angle": "老李为什么没抽烟"
+    }
+  }
+}

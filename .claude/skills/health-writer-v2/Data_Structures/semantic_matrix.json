@@ -1,0 +1,374 @@
+{
+  "matrix_id": "seasonal_semantic_matrix_01",
+  "version": "1.0",
+  "last_updated": "2026-01-20T15:30:00Z",
+  "description": "时令语义关联矩阵 - 三层模型实现智能话题匹配",
+
+  "matrix_architecture": {
+    "layer_1_climate": {
+      "name": "气候层",
+      "description": "捕捉天气、温度、季节等环境因素",
+      "dimensions": ["温度", "湿度", "气压", "风力", "光照", "空气质量"],
+      "data_sources": ["和风天气API", "节气日历", "历史气象数据"],
+      "semantic_tags": ["寒冷", "炎热", "干燥", "潮湿", "大风", "阴天", "晴朗", "温差大"]
+    },
+
+    "layer_2_lifestyle": {
+      "name": "生活层",
+      "description": "映射日常生活场景、习惯、行为模式",
+      "dimensions": ["作息", "饮食", "运动", "穿着", "社交", "工作", "居家"],
+      "data_sources": ["Persona Hub", "常识库", "行为模式分析"],
+      "semantic_tags": ["熬夜", "早起", "暴饮暴食", "清淡饮食", "户外运动", "久坐", "聚会", "独处", "保暖", "散热"]
+    },
+
+    "layer_3_emotion": {
+      "name": "情绪层",
+      "description": "反映心理状态、情绪模式、情感需求",
+      "dimensions": ["焦虑", "愉悦", "疲惫", "平静", "烦躁", "压抑", "兴奋", "孤独"],
+      "data_sources": ["心理研究", "季节性情绪规律", "社会观察"],
+      "semantic_tags": ["春困", "秋悲", "冬郁", "烦躁", "心浮气躁", "情绪低落", "精神不振", "焦虑不安"]
+    }
+  },
+
+  "semantic_associations": {
+    "temperature_mappings": {
+      "极寒": {
+        "range": "≤ -5℃",
+        "lifestyle_triggers": ["穿着厚重", "减少户外活动", "室内取暖", "饮食偏温热", "饮水量下降"],
+        "emotion_triggers": ["压抑", "孤独感增强", "活动欲望降低", "嗜睡"],
+        "health_topics": ["防寒保暖", "心血管保护", "呼吸道防护", "冬季抑郁"],
+        "old_li_voice": "三九天，车间里冻得手都不听使唤。老师傅说，'冻不死的岗，累不死的汉，就是这寒气得防着。'"
+      },
+      "寒冷": {
+        "range": "-5℃ ~ 5℃",
+        "lifestyle_triggers": ["添衣保暖", "喝热水", "吃火锅", "缩手缩脚", "开暖气"],
+        "emotion_triggers": ["安静", "内向", "相对压抑", "想家"],
+        "health_topics": ["感冒预防", "关节保护", "手脚冰凉", "温补食材"],
+        "old_li_voice": "天一冷，我就想起小时候围炉取暖的日子。那时候一家人围着煤炉，烤个红薯，暖和。"
+      },
+      "微寒": {
+        "range": "5℃ ~ 15℃",
+        "lifestyle_triggers": ["早晚添衣", "喝温水", "适当运动", "开窗通风"],
+        "emotion_triggers": ["清爽", "平静", "略感清冷", "清醒"],
+        "health_topics": ["春捂秋冻", "感冒预防", "适时增减衣物"],
+        "old_li_voice": "这天气最舒服，不冷不热。早上起来，空气清新，去公园打打太极，一整天都有精神。"
+      },
+      "舒适": {
+        "range": "15℃ ~ 25℃",
+        "lifestyle_triggers": ["户外活动增加", "穿衣轻薄", "开窗通风", "食欲正常"],
+        "emotion_triggers": ["愉悦", "活跃", "社交意愿强", "舒适"],
+        "health_topics": ["适度运动", "规律作息", "均衡饮食"],
+        "old_li_voice": "这种天气，我和秀芳最喜欢。不用穿太多，也不容易出汗，坐那儿晒晒太阳，聊聊天。"
+      },
+      "微热": {
+        "range": "25℃ ~ 32℃",
+        "lifestyle_triggers": ["空调使用", "吃冷饮", "穿浅色衣物", "午休"],
+        "emotion_triggers": ["略烦躁", "困倦", "活力下降", "食欲不振"],
+        "health_topics": ["防暑降温", "空调病", "夏困", "祛湿"],
+        "old_li_voice": "天一热，人就懒洋洋的。我在工厂的时候，夏天最盼着那一碗盐汽水，喝下去，汗一出来，人就舒坦了。"
+      },
+      "炎热": {
+        "range": "32℃ ~ 38℃",
+        "lifestyle_triggers": ["大量出汗", "频繁洗澡", "吃清淡", "减少外出"],
+        "emotion_triggers": ["烦躁", "易怒", "疲劳", "耐心下降"],
+        "health_topics": ["中暑预防", "补水", "电解质平衡", "清热解暑"],
+        "old_li_voice": "三伏天，车间里像个蒸笼。那时候没空调，就靠那个大风扇，还有这一碗绿豆汤，硬是熬过来了。"
+      },
+      "酷热": {
+        "range": "≥ 38℃",
+        "lifestyle_triggers": ["几乎不出门", "整天开空调", "食欲严重下降", "昼夜难眠"],
+        "emotion_triggers": ["极度烦躁", "疲惫", "无力感", "情绪易失控"],
+        "health_topics": ["防暑降温", "热射病", "心血管负担", "夜间休息"],
+        "old_li_voice": "这种天气，命都是空调给的。但也别贪凉，我有个工友，大汗淋漓直接吹空调，当天就瘫痪了。"
+      }
+    },
+
+    "humidity_mappings": {
+      "极干": {
+        "rh_range": "< 30%",
+        "lifestyle_triggers": ["皮肤干燥", "静电", "嗓子干", "多喝水"],
+        "emotion_triggers": ["清醒但略燥", "易上火"],
+        "health_topics": ["补水", "润燥", "皮肤护理", "防静电"],
+        "old_li_voice": "天干物燥，小心火烛。工厂里挂这么大标语是有道理的。人也一样，得多喝水，不然嗓子冒烟。"
+      },
+      "干燥": {
+        "rh_range": "30% ~ 50%",
+        "lifestyle_triggers": ["皮肤略干", "适宜晾晒", "注意保湿"],
+        "emotion_triggers": ["清爽", "舒适"],
+        "health_topics": ["基础保湿", "鼻腔护理"],
+        "old_li_voice": "这种天气晒衣服最合适，一天就干。但人也得'润润'，多吃点梨，煮点冰糖雪梨汤。"
+      },
+      "舒适": {
+        "rh_range": "50% ~ 70%",
+        "lifestyle_triggers": ["体感舒适", "呼吸顺畅", "正常活动"],
+        "emotion_triggers": ["平静", "舒适"],
+        "health_topics": ["保持良好习惯"],
+        "old_li_voice": "湿度刚好的时候，呼吸都觉得顺畅。老话说'不干不湿，过得舒服'。"
+      },
+      "潮湿": {
+        "rh_range": "70% ~ 85%",
+        "lifestyle_triggers": ["食物易变质", "衣物难干", "体感粘腻", "启用除湿"],
+        "emotion_triggers": ["闷", "略烦躁", "活动欲降低"],
+        "health_topics": ["祛湿", "防霉", "食物保鲜", "皮肤问题"],
+        "old_li_voice": "回南天的时候，墙都流泪。我在广东当过几年兵，那湿气，被子都能拧出水来。后来老班长教我用艾叶熏。"
+      },
+      "极湿": {
+        "rh_range": "> 85%",
+        "lifestyle_triggers": ["浑身粘腻", "食物快速变质", "大量使用除湿机", "皮肤问题加剧"],
+        "emotion_triggers": ["压抑", "烦躁", "无力", "情绪低落"],
+        "health_topics": ["祛湿健脾", "防湿疹", "防肠胃病", "关节保护"],
+        "old_li_voice": "桑拿天，人像泡在水里。这时候就别贪凉了，我见过年轻人冰镇西瓜吃多了，当场就跑厕所的。"
+      }
+    },
+
+    "seasonal_emotion_patterns": {
+      "spring": {
+        "emotions": ["生机勃勃", "易怒", "春困", "情绪波动"],
+        "tcm_theory": "春应肝，肝气生发，易情绪波动",
+        "lifestyle_adjustments": ["疏肝解郁", "户外踏青", "舒畅情志"],
+        "content_focus": ["养肝", "情绪管理", "春季养生"],
+        "old_li_voice": "春天来了，万物复苏，人也容易浮躁。我那会儿在工厂，春天总会安排大家去郊游，说是'踏青'，其实就是让大家别憋坏了。"
+      },
+      "summer": {
+        "emotions": ["烦躁", "活跃", "疲劳", "兴奋"],
+        "tcm_theory": "夏应心，心火旺，易烦躁",
+        "lifestyle_adjustments": ["清热解暑", "午休", "静心安神"],
+        "content_focus": ["养心", "防暑", "祛湿", "夏困"],
+        "old_li_voice": "夏天热得人心浮气躁。我在车间的时候，夏天午休必须强制执行，不然下午干活，人就容易出神。"
+      },
+      "autumn": {
+        "emotions": ["清爽", "悲秋", "平静", "孤独感增强"],
+        "tcm_theory": "秋应肺，肺气清肃，易悲秋",
+        "lifestyle_adjustments": ["润肺", "乐观", "登高望远"],
+        "content_focus": ["养肺", "防秋燥", "情绪调节"],
+        "old_li_voice": "秋风一起，叶子黄了，人就爱叹气。秀芳那时候总说，'秋天是收获的季节，你愁什么？'现在想想，她说得对。"
+      },
+      "winter": {
+        "emotions": ["内敛", "压抑", "安静", "抑郁倾向"],
+        "tcm_theory": "冬应肾，肾主藏，宜养藏",
+        "lifestyle_adjustments": ["温补", "早睡晚起", "静心安神"],
+        "content_focus": ["养肾", "防寒", "冬季抑郁", "温补"],
+        "old_li_voice": "冬天就该'猫冬'。我那会儿，冬天就是围着炉子，喝点小酒，吃点热乎的，一冬都不出门。现在想想，那才叫养生。"
+      }
+    },
+
+    "festival_semantic_mappings": {
+      "spring_festival": {
+        "time": "农历正月初一",
+        "emotion_profile": ["喜悦", "团圆", "忙碌", "略焦虑（招待亲戚）"],
+        "lifestyle_impact": {
+          "diet": "大鱼大肉，暴饮暴食风险高",
+          "sleep": "守岁熬夜，作息紊乱",
+          "social": "聚会频繁，社交压力大",
+          "activity": "走访亲友，体力消耗大"
+        },
+        "health_risks": ["消化不良", "急性胰腺炎", "痛风", "疲劳", "感冒"],
+        "content_focus": ["饮食有节", "作息规律", "防寒保暖", "情绪调节"],
+        "old_li_voice": "过年是高兴，但也别'累坏了'。我那会儿过年，从腊月二十八忙到初五，见着亲戚就得喝酒，到头来，自己累得够呛。现在知道了，过年也得悠着点。"
+      },
+      "qingming_festival": {
+        "time": "4月4-6日",
+        "emotion_profile": ["缅怀", "略忧伤", "春游愉悦"],
+        "lifestyle_impact": {
+          "diet": "青团等寒凉食物",
+          "activity": "扫墓踏青，户外活动",
+          "emotion": "追思故人"
+        },
+        "health_risks": ["寒凉伤胃", "花粉过敏", "情绪波动"],
+        "content_focus": ["温中健脾", "防过敏", "情绪疏导"],
+        "old_li_voice": "清明扫墓，是尽孝心。但也不能太伤心，把身子搞垮了，先人看了也不安心。秀芳走了之后，我每年都去，但也就是擦擦墓碑，说说话，不强求自己。"
+      },
+      "dragon_boat_festival": {
+        "time": "农历五月初五",
+        "emotion_profile": ["热闹", "纪念", "初夏气息"],
+        "lifestyle_impact": {
+          "diet": "粽子（粘腻），雄黄酒",
+          "climate": "进入仲夏，湿热加重",
+          "activity": "赛龙舟（观赛）"
+        },
+        "health_risks": ["消化不良", "湿热加重", "中暑"],
+        "content_focus": ["健脾祛湿", "防暑降温", "适量食用"],
+        "old_li_voice": "端午吃粽子，是纪念屈原。但粽子这东西，糯米做的，不好消化。我年轻时候贪嘴，一次吃三个，结果胃胀了两天。现在知道了，一个就够了。"
+      },
+      "mid_autumn_festival": {
+        "time": "农历八月十五",
+        "emotion_profile": ["团圆", "温馨", "孤独感（若独自）"],
+        "lifestyle_impact": {
+          "diet": "月饼（高糖高脂），螃蟹",
+          "climate": "秋意渐浓，温差加大",
+          "social": "团圆饭，赏月"
+        },
+        "health_risks": ["血糖波动", "痛风", "秋燥", "着凉"],
+        "content_focus": ["适量", "防秋燥", "注意温差", "独处关怀"],
+        "old_li_voice": "中秋团圆，人月两圆。但月饼这东西，糖多油大，尝尝就行。我那会儿，一到中秋，家里月饼堆成山，结果吃到过年都没吃完。"
+      },
+      "double_ninth_festival": {
+        "time": "农历九月初九",
+        "emotion_profile": ["敬老", "登高", "略感慨（衰老）"],
+        "lifestyle_impact": {
+          "diet": "重阳糕",
+          "activity": "登高，敬老活动",
+          "emotion": "思考衰老，健康焦虑"
+        },
+        "health_risks": ["运动损伤", "体力不支", "情绪低落"],
+        "content_focus": ["适度运动", "衰老正确认知", "老年保健", "安全登高"],
+        "old_li_voice": "重阳节，现在说是'老年节'。65岁了，我确实算老年人了。但咱不服老！登高我不去了，膝盖不行，但在家打个太极，听听戏，也挺美。"
+      }
+    },
+
+    "special_population_semantics": {
+      "elderly_60_70": {
+        "primary_concerns": ["慢性病管理", "衰老焦虑", "家庭关系", "财务安全"],
+        "emotional_patterns": ["重视健康", "怕孤独", "怕拖累子女", "怀旧"],
+        "lifestyle_features": ["退休生活", "照顾孙辈", "广场舞/太极拳", "健康养生"],
+        "content_resonance": ["共鸣式故事", "实用经验", "防骗知识", "家庭和睦"],
+        "old_li_voice": "咱这个岁数，不怕穷，就怕病。有口气在，还能看看孙子，就知足了。"
+      },
+      "elderly_70_80": {
+        "primary_concerns": ["行动能力", "记忆力", "生活自理", "临终关怀"],
+        "emotional_patterns": ["怕失能", "怕被遗忘", "怕孤独", "珍惜当下"],
+        "lifestyle_features": ["简化生活", "医疗依赖增强", "家庭照护"],
+        "content_resonance": ["尊严维护", "照护技巧", "心理慰藉", "生命意义"],
+        "old_li_voice": "人老了，就像那台旧铣床，零件不行了，但你还得保养。保养得好，还能转几年。"
+      },
+      "middle_aged_40_60": {
+        "primary_concerns": ["工作压力", "子女教育", "父母养老", "自身健康"],
+        "emotional_patterns": ["焦虑", "疲惫", "责任重", "透支感"],
+        "lifestyle_features": ["加班熬夜", "应酬", "缺乏运动", "快餐外卖"],
+        "content_resonance": ["健康管理", "减压技巧", "时间管理", "家庭平衡"],
+        "old_li_voice": "上有老下有小，这代人不容易。我那会儿也是这么过来的，硬扛。但现在想想，身体是自己的，扛不住就歇会儿，没人怪你。"
+      }
+    }
+  },
+
+  "semantic_matching_algorithm": {
+    "name": "Multi-Dimensional Semantic Scoring (MDSS)",
+    "description": "多维度语义评分算法，计算当前情境与健康话题的匹配度",
+
+    "scoring_formula": {
+      "total_score": "气候层权重 × 气候匹配度 + 生活层权重 × 生活匹配度 + 情绪层权重 × 情绪匹配度",
+      "default_weights": {
+        "climate_weight": 0.4,
+        "lifestyle_weight": 0.4,
+        "emotion_weight": 0.2
+      },
+      "dynamic_adjustment": "根据事件严重程度、节气特殊性和用户反馈动态调整权重"
+    },
+
+    "matching_examples": [
+      {
+        "current_context": {
+          "solar_term": "大暑",
+          "temperature": "36℃",
+          "humidity": "85%",
+          "weather": "闷热有雨"
+        },
+        "candidate_topics": [
+          {
+            "topic": "夏季祛湿茶饮",
+            "climate_match": 0.95,
+            "lifestyle_match": 0.90,
+            "emotion_match": 0.75,
+            "total_score": 0.88,
+            "recommendation": "HIGHLY_RECOMMENDED"
+          },
+          {
+            "topic": "冬季进补方法",
+            "climate_match": 0.10,
+            "lifestyle_match": 0.30,
+            "emotion_match": 0.50,
+            "total_score": 0.24,
+            "recommendation": "NOT_RECOMMENDED"
+          }
+        ]
+      },
+      {
+        "current_context": {
+          "festival": "春节后第三天",
+          "social_context": "暴饮暴食后恢复期"
+        },
+        "candidate_topics": [
+          {
+            "topic": "节后消食方法",
+            "climate_match": 0.60,
+            "lifestyle_match": 0.98,
+            "emotion_match": 0.85,
+            "total_score": 0.81,
+            "recommendation": "HIGHLY_RECOMMENDED"
+          }
+        ]
+      }
+    ]
+  },
+
+  "conflict_resolution_rules": {
+    "rule_1_season_override": {
+      "description": "当节气特征与实时天气冲突时，以实时天气为主，但保留节气建议",
+      "example": "立秋已过，但仍在38℃高温，则优先推送'秋老虎'防暑内容，兼顾'防秋燥'"
+    },
+    "rule_2_emergency_priority": {
+      "description": "应急事件优先级高于常规语义匹配",
+      "example": "台风橙色预警时，无论节气如何，优先推送台风防护内容"
+    },
+    "rule_3_age_adaptation": {
+      "description": "根据目标人群年龄调整语义权重",
+      "example": "针对70岁以上老年人，增加'生活自理'和'临终关怀'的情感层权重"
+    },
+    "rule_4_balance_emotions": {
+      "description": "避免负面情绪内容过于集中，穿插积极正面内容",
+      "example": "连续推送3篇疾病预防内容后，穿插1篇养生食疗或生活情趣内容"
+    },
+    "rule_5_local_customization": {
+      "description": "根据地域气候特征调整语义匹配",
+      "example": "南方用户在冬季，'湿冷'权重增加；北方用户，'干冷'权重增加"
+    }
+  },
+
+  "old_li_voice_library": {
+    "contextual_quotes": {
+      "spring": {
+        "lichun": "立春了，该'咬春'了。但这韭菜也不是人人都能吃，胃寒的得悠着点。",
+        "qingming": "清明前后，种瓜点豆。人也是，春天该动起来了，别老宅家里。",
+        "guyu": "谷雨种大田。这雨水一多，湿气就重。我这老寒腿开始预报天气了。"
+      },
+      "summer": {
+        "lixia": "立夏了，该养心了。天一热，人就爱烦躁，这时候就得静心。",
+        "mangzhong": "芒种忙种，这时候农活最忙。咱虽然不种地了，但也别闲着，动动手脚，出出汗。",
+        "dashu": "大暑天，最怕贪凉。我那工友，大汗淋漓直接冲冷水澡，当场就晕了。"
+      },
+      "autumn": {
+        "liqiu": "立秋了，但还没凉快呢，这叫'秋老虎'。别急着进补，先祛湿。",
+        "bailu": "白露身不露。这天一凉，我就想起秀芳，她总这时候给我织毛衣。",
+        "hanlu": "寒露脚不露。这时候得穿袜子了，别等到冻坏了再后悔。"
+      },
+      "winter": {
+        "lidong": "立冬了，该'补冬'了。但也不能瞎补，得看体质。我就不适合大补，一补就上火。",
+        "daxue": "大雪天，我就爱窝在家里。年轻时还爱出去打雪仗，现在就算了，省得滑倒。",
+        "dongzhi": "冬至大如年。这一天得吃饺子，不是为了过节，是为了不冻耳朵。这是老规矩。"
+      }
+    },
+    "weather_quotes": {
+      "cold_wave_coming": "寒潮要来了，都把羽绒服找出来。我这老寒腿已经预报了，赶紧贴膏药。",
+      "heat_wave": "热死个人！这时候就别省电费了，空调该开就开。但也别贪凉，温度别开太低。",
+      "rainy_stretch": "这雨下得，被子都发霉了。赶紧除湿，不然身上长湿疹，那才叫难受。",
+      "blue_sky": "今天天儿真好！别老宅家里，出去走走。晒晒太阳，补补钙。"
+    },
+    "emotional_quotes": {
+      "encouragement": "咱这岁数，有个头疼脑热的正常。别自己吓自己，该吃吃，该喝喝，心态最重要。",
+      "empathy": "我懂你。伺候老人那8年，我也崩溃过无数次。但你问心无愧，这就够了。",
+      "nostalgia": "现在条件好了，但人心浮躁了。我们那会儿，虽然穷，但心里踏实。",
+      "wisdom": "老了就老了，怕什么？关键是要'老得有尊严'。身体允许，就多动动；不允许了，就歇着，别硬撑。"
+    }
+  },
+
+  "semantic_evolution_tracking": {
+    "description": "跟踪语义关联效果，持续优化矩阵",
+    "metrics": {
+      "topic_ctr": "不同话题在不同时节的点击率",
+      "engagement_rate": "点赞、在看、转发率",
+      "completion_rate": "文章阅读完成率",
+      "user_feedback": "评论情感分析"
+    },
+    "optimization_cycle": "每月一次，根据数据调整权重和匹配规则"
+  }
+}

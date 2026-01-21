@@ -1,0 +1,142 @@
+# Health Writer V2 - Git Ignore File
+# 保护敏感信息和不必要的文件
+
+# ========================================
+# 敏感信息（绝对不要提交）
+# ========================================
+.env
+*.env
+.env.local
+.env.*.local
+
+# API Keys 和配置
+config/api_keys.yaml
+config/secrets.yaml
+config/private_config.yaml
+
+# ========================================
+# Python
+# ========================================
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+pip-wheel-metadata/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# Virtual Environment
+venv/
+ENV/
+env/
+.venv
+
+# PyCharm
+.idea/
+
+# VS Code
+.vscode/
+*.code-workspace
+
+# Jupyter Notebook
+.ipynb_checkpoints
+*.ipynb
+
+# ========================================
+# Claude Code / Agent 相关
+# ========================================
+# Agent 输出文件（如果很大）
+*.log
+*.log.*
+
+# 临时文件
+*.tmp
+*.temp
+*.cache
+
+# LLM 响应缓存
+.cache/
+.llm_cache/
+
+# ========================================
+# 数据文件（可能很大或敏感）
+# ========================================
+# 数据集
+data/*.csv
+data/*.json
+data/*.xlsx
+
+# 模型文件
+models/
+*.pkl
+*.h5
+*.pth
+
+# ========================================
+# 系统文件
+# ========================================
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# ========================================
+# 备份文件
+# ========================================
+*.bak
+*.backup
+*~
+
+# ========================================
+# 测试和覆盖率
+# ========================================
+.coverage
+.pytest_cache/
+htmlcov/
+.tox/
+.nox/
+
+# ========================================
+# 文档生成
+# ========================================
+docs/_build/
+site/
+
+# ========================================
+# 个性化文件（根据需要调整）
+# ========================================
+
+# 如果你的 UCO 对象很多且很大
+# uco_objects/
+
+# 如果有用户生成的内容
+# user_content/
+
+# ========================================
+# 但要保留的文件
+# ========================================
+# 示例配置文件（不包含真实密钥）
+!config/api_config.yaml
+!config/example_config.yaml
+
+# 测试数据（如果小）
+# tests/test_data/*.json

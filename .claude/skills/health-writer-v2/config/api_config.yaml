@@ -1,0 +1,61 @@
+# LLM API 配置文件
+# 请根据你的实际情况配置
+
+# ========================================
+# 方式1: 环境变量（推荐）
+# ========================================
+# 在终端设置环境变量：
+# export LLM_PROVIDER="openai"
+# export LLM_API_KEY="your-api-key"
+# export LLM_MODEL="gpt-3.5-turbo"
+
+# ========================================
+# 方式2: 配置文件（不推荐提交到 Git）
+# ========================================
+# 取消下面的注释并填入你的配置
+
+llm:
+  provider: "openai"  # openai, claude, ollama, qianwen
+  api_key: "your-api-key-here"  # 你的 API Key
+  base_url: null  # 可选，自定义 API 地址
+  model: "gpt-3.5-turbo"  # 模型名称
+  temperature: 0.7
+  max_tokens: 2000
+  timeout: 60
+
+# ========================================
+# 各个 Provider 的配置示例
+# ========================================
+
+# OpenAI (GPT-3.5/GPT-4)
+# llm:
+#   provider: "openai"
+#   api_key: "sk-..."
+#   model: "gpt-3.5-turbo"  # 或 "gpt-4"
+
+# Claude (Anthropic)
+# llm:
+#   provider: "claude"
+#   api_key: "sk-ant-..."
+#   model: "claude-3-sonnet-20240229"  # 或 "claude-3-opus-20240229"
+
+# Ollama (本地)
+# llm:
+#   provider: "ollama"
+#   api_key: "ollama"  # 不需要真实 key
+#   base_url: "http://localhost:11434"
+#   model: "llama2"  # 或 "mistral", "neural-chat"
+
+# 通义千问 (阿里云)
+# llm:
+#   provider: "qianwen"
+#   api_key: "sk-..."
+#   base_url: "https://dashscope.aliyuncs.com/api/v1/services/aigc/text-generation/generation"
+#   model: "qwen-turbo"  # 或 "qwen-plus", "qwen-max"
+
+# ========================================
+# 注意事项
+# ========================================
+# 1. 不要将包含真实 API Key 的配置文件提交到 Git
+# 2. 建议使用环境变量，更安全
+# 3. 环境变量的优先级高于配置文件

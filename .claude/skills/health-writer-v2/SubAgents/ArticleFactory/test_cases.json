@@ -1,0 +1,509 @@
+{
+  "test_suite": "ArticleFactory SubAgent Test Cases",
+  "version": "1.0",
+  "created": "2026-01-20",
+  "description": "ArticleFactory SubAgent 的测试用例集合",
+
+  "test_cases": [
+    {
+      "test_id": "TC_001",
+      "name": "标准文章生成 - 时令话题",
+      "category": "功能测试",
+      "priority": "P0",
+      "description": "测试标准的时令话题文章生成流程",
+
+      "input": {
+        "topic": "立春养肝",
+        "topic_source": "CHRONOS_RECOMMENDATION",
+        "target_audience": {
+          "age_group": "60-70",
+          "gender": "all"
+        },
+        "urgency": "NORMAL",
+        "quality_level": "STANDARD",
+        "custom_requirements": null
+      },
+
+      "expected_output": {
+        "success": true,
+        "status": "READY",
+        "article": {
+          "title": "string (not empty)",
+          "titles_generated": "array (length >= 3)",
+          "content": "string (length >= 1500)",
+          "word_count": "number (>= 1500)",
+          "tags": "array (not empty)"
+        },
+        "quality_metrics": {
+          "virality_score": "number (>= 30)",
+          "quality_score": "number (>= 80)",
+          "revision_count": "number (>= 0)"
+        },
+        "workflow_report": {
+          "total_time": "number (between 100 and 200 minutes)",
+          "mode": "STANDARD"
+        },
+        "old_li_compliance": {
+          "tone_score": "number (>= 85)",
+          "voice_samples": "array (not empty)"
+        }
+      },
+
+      "assertions": [
+        "UCO 状态应该是 READY",
+        "文章标题不应该为空",
+        "文章内容应该包含老李语录",
+        "质量分数应该 >= 80",
+        "老李人设符合度应该 >= 85%"
+      ]
+    },
+
+    {
+      "test_id": "TC_002",
+      "name": "应急模式 - 极端天气",
+      "category": "功能测试",
+      "priority": "P0",
+      "description": "测试应急模式下的快速文章生成",
+
+      "input": {
+        "topic": "高温防暑",
+        "topic_source": "EMERGENCY_EVENT",
+        "target_audience": {
+          "age_group": "45-70",
+          "gender": "all"
+        },
+        "urgency": "EMERGENCY",
+        "quality_level": "STANDARD",
+        "custom_requirements": {
+          "keywords": ["中暑", "防暑", "降温"],
+          "min_length": 1500
+        }
+      },
+
+      "expected_output": {
+        "success": true,
+        "status": "READY",
+        "workflow_report": {
+          "total_time": "number (<= 90 minutes)",
+          "mode": "EMERGENCY"
+        }
+      },
+
+      "assertions": [
+        "总耗时应该 <= 90 分钟",
+        "文章应该包含关键词：中暑、防暑、降温",
+        "文章字数应该 >= 1500",
+        "应急模式可能牺牲部分质量，但时效性优先"
+      ]
+    },
+
+    {
+      "test_id": "TC_003",
+      "name": "高质量模式 - 多轮优化",
+      "category": "功能测试",
+      "priority": "P1",
+      "description": "测试高质量模式下的多轮优化流程",
+
+      "input": {
+        "topic": "中老年人降糖方法",
+        "topic_source": "USER_MANUAL",
+        "urgency": "NORMAL",
+        "quality_level": "HIGH"
+      },
+
+      "expected_output": {
+        "success": true,
+        "quality_metrics": {
+          "virality_score": "number (>= 35)",
+          "quality_score": "number (>= 85)",
+          "revision_count": "number (could be > 0)"
+        }
+      },
+
+      "assertions": [
+        "爆款分数应该 >= 35",
+        "质量分数应该 >= 85",
+        "可能会进行多轮修改以提高质量"
+      ]
+    },
+
+    {
+      "test_id": "TC_004",
+      "name": "修改循环 - 内容调整",
+      "category": "路由逻辑测试",
+      "priority": "P0",
+      "description": "测试 Agent 5 要求修改内容时的路由逻辑",
+
+      "input": {
+        "topic": "春季护肝茶饮",
+        "topic_source": "USER_MANUAL",
+        "urgency": "NORMAL",
+        "quality_level": "STANDARD"
+      },
+
+      "mock_agent_5_response": {
+        "routing_decision": "REVISE_CONTENT",
+        "reason": "过于学术化，不符合老李人设",
+        "quality_score": 75
+      },
+
+      "expected_output": {
+        "success": true,
+        "quality_metrics": {
+          "revision_count": "number (>= 1)"
+        },
+        "workflow_report": {
+          "routing_decisions": "array (length >= 1)"
+        }
+      },
+
+      "assertions": [
+        "应该至少进行 1 轮修改",
+        "路由决策记录中应该有 REVISE_CONTENT",
+        "最终质量分数应该 >= 80"
+      ]
+    },
+
+    {
+      "test_id": "TC_005",
+      "name": "修改循环 - 大纲调整",
+      "category": "路由逻辑测试",
+      "priority": "P1",
+      "description": "测试 Agent 5 要求修改大纲时的路由逻辑",
+
+      "input": {
+        "topic": "冬季补肾食谱",
+        "topic_source": "USER_MANUAL"
+      },
+
+      "mock_agent_5_response": {
+        "routing_decision": "REVISE_STRUCTURE",
+        "reason": "文章结构不够吸引人"
+      },
+
+      "expected_output": {
+        "success": true,
+        "workflow_report": {
+          "routing_decisions": "array (should contain REVISE_STRUCTURE)"
+        }
+      },
+
+      "assertions": [
+        "应该返回 Agent 3 重新设计大纲",
+        "路由决策记录中应该有 REVISE_STRUCTURE"
+      ]
+    },
+
+    {
+      "test_id": "TC_006",
+      "name": "修改上限防护",
+      "category": "边界条件测试",
+      "priority": "P0",
+      "description": "测试达到修改上限后的升级机制",
+
+      "input": {
+        "topic": "测试修改上限",
+        "topic_source": "USER_MANUAL"
+      },
+
+      "mock_behavior": {
+        "agent_5_always_requests_revision": true,
+        "revision_limit": 3
+      },
+
+      "expected_output": {
+        "success": true,
+        "quality_metrics": {
+          "revision_count": "number (<= revision_limit)"
+        },
+        "workflow_report": {
+          "routing_decisions": "array (last decision should be ESCALATE or approved with warning)"
+        }
+      },
+
+      "assertions": [
+        "修改轮次不应该超过上限",
+        "应该触发升级机制或强制批准",
+        "应该记录升级事件"
+      ]
+    },
+
+    {
+      "test_id": "TC_007",
+      "name": "老李人设符合度",
+      "category": "质量测试",
+      "priority": "P0",
+      "description": "测试生成的文章是否符合老李人设",
+
+      "input": {
+        "topic": "中秋节月饼选择",
+        "topic_source": "CHRONOS_RECOMMENDATION"
+      },
+
+      "expected_output": {
+        "success": true,
+        "old_li_compliance": {
+          "tone_score": "number (>= 85)",
+          "voice_samples": "array (should contain authentic Old Li quotes)",
+          "memory_cards_used": "array (may contain memory card references)"
+        }
+      },
+
+      "assertions": [
+        "老李人设符合度应该 >= 85%",
+        "应该包含老李原声音频",
+        "语言风格应该是'硬、实、旧'",
+        "不应该包含网络流行语（yyds、绝绝子等）"
+      ]
+    },
+
+    {
+      "test_id": "TC_008",
+      "name": "标题生成质量",
+      "category": "质量测试",
+      "priority": "P1",
+      "description": "测试 Agent 7 生成的标题质量",
+
+      "input": {
+        "topic": "白露养生",
+        "topic_source": "CHRONOS_RECOMMENDATION",
+        "target_audience": {
+          "age_group": "60-70"
+        }
+      },
+
+      "expected_output": {
+        "success": true,
+        "article": {
+          "titles_generated": "array (length >= 3)",
+          "title": "string (should be the best one)"
+        }
+      },
+
+      "assertions": [
+        "应该生成至少 3 个标题",
+        "标题应该符合目标年龄段的语言习惯",
+        "标题应该包含数字或具体细节",
+        "标题应该制造好奇心或紧迫感",
+        "CTR 预测应该 >= 10%"
+      ]
+    },
+
+    {
+      "test_id": "TC_009",
+      "name": "自定义要求",
+      "category": "功能测试",
+      "priority": "P1",
+      "description": "测试自定义要求的功能",
+
+      "input": {
+        "topic": "高血压饮食",
+        "topic_source": "USER_MANUAL",
+        "custom_requirements": {
+          "keywords": ["高血压", "低盐", "芹菜"],
+          "forbidden_words": ["yyds", "绝绝子", "躺平"],
+          "min_length": 2000,
+          "max_length": 3000
+        }
+      },
+
+      "expected_output": {
+        "success": true,
+        "article": {
+          "content": "string (should contain keywords)",
+          "word_count": "number (between 2000 and 3000)"
+        }
+      },
+
+      "assertions": [
+        "文章应该包含所有关键词",
+        "文章不应该包含禁止词汇",
+        "文章字数应该在指定范围内"
+      ]
+    },
+
+    {
+      "test_id": "TC_010",
+      "name": "UCO 状态转换",
+      "category": "状态管理测试",
+      "priority": "P0",
+      "description": "测试 UCO 状态的正确转换",
+
+      "input": {
+        "topic": "测试状态转换"
+      },
+
+      "expected_state_transitions": [
+        "INIT",
+        "ANALYZING",
+        "ANALYZED",
+        "OUTLINING",
+        "OUTLINED",
+        "DRAFTING",
+        "DRAFTED",
+        "REVIEWING",
+        "REVIEWED",
+        "OPTIMIZING",
+        "OPTIMIZED",
+        "READY"
+      ],
+
+      "assertions": [
+        "UCO 状态应该按照预期顺序转换",
+        "每个状态转换都应该有日志记录",
+        "最终状态应该是 READY"
+      ]
+    },
+
+    {
+      "test_id": "TC_011",
+      "name": "不同话题来源",
+      "category": "兼容性测试",
+      "priority": "P1",
+      "description": "测试不同话题来源的处理",
+
+      "test_variations": [
+        {
+          "name": "时令主编推荐",
+          "input": {
+            "topic": "立春养肝",
+            "topic_source": "CHRONOS_RECOMMENDATION"
+          }
+        },
+        {
+          "name": "用户手动指定",
+          "input": {
+            "topic": "糖尿病饮食",
+            "topic_source": "USER_MANUAL"
+          }
+        },
+        {
+          "name": "爆款分析热点",
+          "input": {
+            "topic": "年轻人猝死",
+            "topic_source": "VIRAL_TRENDING"
+          }
+        },
+        {
+          "name": "应急事件",
+          "input": {
+            "topic": "台风防范",
+            "topic_source": "EMERGENCY_EVENT",
+            "urgency": "EMERGENCY"
+          }
+        }
+      ],
+
+      "assertions": [
+        "所有话题来源都应该能正常处理",
+        "不同来源可能有不同的处理优先级"
+      ]
+    },
+
+    {
+      "test_id": "TC_012",
+      "name": "错误处理 - Agent 超时",
+      "category": "异常处理测试",
+      "priority": "P1",
+      "description": "测试 Agent 调用超时的处理",
+
+      "mock_behavior": {
+        "agent_4_timeout": true
+      },
+
+      "expected_output": {
+        "success": false,
+        "error": "string (should indicate timeout)"
+      },
+
+      "assertions": [
+        "应该捕获超时错误",
+        "应该返回有意义的错误信息",
+        "不应该导致整个程序崩溃"
+      ]
+    },
+
+    {
+      "test_id": "TC_013",
+      "name": "并发执行",
+      "category": "性能测试",
+      "priority": "P2",
+      "description": "测试同时处理多个文章生成任务",
+
+      "input": {
+        "tasks": [
+          {"topic": "任务1 - 立春养肝"},
+          {"topic": "任务2 - 高温防暑"},
+          {"topic": "任务3 - 秋季润肺"}
+        ]
+      },
+
+      "expected_output": {
+        "success": true,
+        "all_tasks_completed": true
+      },
+
+      "assertions": [
+        "所有任务都应该成功完成",
+        "每个任务应该有独立的 UCO ID",
+        "任务之间不应该互相干扰"
+      ]
+    },
+
+    {
+      "test_id": "TC_014",
+      "name": "性能基准测试",
+      "category": "性能测试",
+      "priority": "P1",
+      "description": "测试标准模式的性能基准",
+
+      "input": {
+        "topic": "性能测试话题",
+        "urgency": "NORMAL",
+        "quality_level": "STANDARD"
+      },
+
+      "performance_criteria": {
+        "max_duration": 200,
+        "min_duration": 100,
+        "memory_usage": "reasonable"
+      },
+
+      "assertions": [
+        "标准模式应该在 100-200 分钟内完成",
+        "内存使用应该在合理范围内",
+        "不应该有内存泄漏"
+      ]
+    }
+  ],
+
+  "test_execution_plan": {
+    "smoke_tests": ["TC_001", "TC_002", "TC_007"],
+    "core_functionality": ["TC_001", "TC_002", "TC_003", "TC_007"],
+    "routing_logic": ["TC_004", "TC_005", "TC_006"],
+    "quality_assurance": ["TC_007", "TC_008", "TC_009"],
+    "edge_cases": ["TC_006", "TC_010", "TC_012"],
+    "full_regression": "all_tests"
+  },
+
+  "testing_guidelines": {
+    "prerequisites": [
+      "所有 Agent 2-7 规范文档已创建",
+      "Persona Hub 和 Knowledge Base 已加载",
+      "测试环境已配置"
+    ],
+    "test_data_preparation": [
+      "准备多种类型的话题样本",
+      "配置 Mock 数据用于路由逻辑测试",
+      "准备性能基准数据"
+    ],
+    "execution_order": [
+      "1. 运行冒烟测试 (smoke_tests)",
+      "2. 运行核心功能测试 (core_functionality)",
+      "3. 运行路由逻辑测试 (routing_logic)",
+      "4. 运行质量保证测试 (quality_assurance)",
+      "5. 运行边界条件测试 (edge_cases)",
+      "6. 运行完整回归测试 (full_regression)"
+    ]
+  }
+}

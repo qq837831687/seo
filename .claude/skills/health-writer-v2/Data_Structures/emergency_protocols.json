@@ -1,0 +1,438 @@
+{
+  "protocol_id": "emergency_response_01",
+  "version": "1.0",
+  "last_updated": "2026-01-20T15:00:00Z",
+  "description": "异常事件应急响应协议库 - 定义各类异常的触发条件、响应策略和内容生成规则",
+
+  "severity_levels": {
+    "CRITICAL": {
+      "level": 4,
+      "name": "紧急",
+      "description": "立即响应，2小时内发布",
+      "response_time": "2小时内",
+      "content_priority": "最高优先级，打断常规排期",
+      "examples": ["极端高温预警", "寒潮橙色预警", "重大疫情爆发", "食品安全事件"]
+    },
+    "HIGH": {
+      "level": 3,
+      "name": "重要",
+      "description": "当日响应，24小时内发布",
+      "response_time": "24小时内",
+      "content_priority": "插入当日内容队列",
+      "examples": ["流感高峰", "花粉过敏季", "换季降温", "空气质量严重污染"]
+    },
+    "MEDIUM": {
+      "level": 2,
+      "name": "一般",
+      "description": "周内响应，7天内发布",
+      "response_time": "7天内",
+      "content_priority": "调整下周排期，优先级提高",
+      "examples": ["节气转换", "节日后综合征", "季节性情绪波动"]
+    },
+    "LOW": {
+      "level": 1,
+      "name": "提示",
+      "description": "常规提醒，按原计划发布",
+      "response_time": "按原排期",
+      "content_priority": "常规排期",
+      "examples": ["小幅度降温", "干燥天气提醒", "节气养生"]
+    }
+  },
+
+  "anomaly_types": {
+    "WEATHER": {
+      "type_name": "天气异常",
+      "detection_source": ["和风天气API", "中国气象网"],
+      "trigger_conditions": {
+        "extreme_heat": {
+          "condition": "最高气温 >= 35℃",
+          "severity": "HIGH",
+          "health_impact": ["中暑", "脱水", "心血管负担"],
+          "affected_groups": ["老年人", "儿童", "户外工作者"],
+          "content_focus": "防暑降温，补水防中暑"
+        },
+        "extreme_cold": {
+          "condition": "最低气温 <= -5℃ 或 24小时降温 >= 10℃",
+          "severity": "HIGH",
+          "health_impact": ["冻伤", "心血管意外", "呼吸道感染"],
+          "affected_groups": ["老年人", "高血压患者", "户外工作者"],
+          "content_focus": "防寒保暖，护心护脑"
+        },
+        "temperature_shock": {
+          "condition": "昼夜温差 >= 15℃",
+          "severity": "MEDIUM",
+          "health_impact": ["感冒", "血压波动", "关节不适"],
+          "affected_groups": ["中老年人", "关节炎患者"],
+          "content_focus": "适时增减衣物，保护关节"
+        },
+        "continuous_rain": {
+          "condition": "连续降雨 >= 3天",
+          "severity": "MEDIUM",
+          "health_impact": ["湿气重", "情绪低落", "关节痛"],
+          "affected_groups": ["关节炎患者", "抑郁倾向人群"],
+          "content_focus": "祛湿防潮，调节情绪"
+        },
+        "air_pollution": {
+          "condition": "AQI >= 200",
+          "severity": "HIGH",
+          "health_impact": ["呼吸道刺激", "过敏", "肺部感染"],
+          "affected_groups": ["哮喘患者", "儿童", "老年人"],
+          "content_focus": "防护措施，清肺养肺"
+        }
+      }
+    },
+
+    "HEALTH": {
+      "type_name": "健康事件",
+      "detection_source": ["疾病预防控制中心", "热搜监测"],
+      "trigger_conditions": {
+        "flu_season": {
+          "condition": "流感样病例占比 >= 5% 或 关键词'流感'搜索量激增",
+          "severity": "HIGH",
+          "health_impact": ["高烧", "全身酸痛", "并发症"],
+          "affected_groups": ["老年人", "儿童", "慢性病患者"],
+          "content_focus": "预防措施，增强免疫力，早期识别"
+        },
+        "allergy_season": {
+          "condition": "花粉浓度 >= 中等 或 关键词'过敏'搜索量上升",
+          "severity": "MEDIUM",
+          "health_impact": ["鼻炎", "结膜炎", "哮喘"],
+          "affected_groups": ["过敏体质人群"],
+          "content_focus": "避免接触，抗过敏饮食"
+        },
+        "gastrointestinal_outbreak": {
+          "condition": "诺如病毒等肠炎病例增加 或 食物中毒事件",
+          "severity": "HIGH",
+          "health_impact": ["腹泻", "呕吐", "脱水"],
+          "affected_groups": ["儿童", "老年人", "免疫力低下者"],
+          "content_focus": "食品安全，卫生习惯，补液调理"
+        }
+      }
+    },
+
+    "SOCIAL": {
+      "type_name": "社会热点",
+      "detection_source": ["微博热搜", "微信指数", "百度指数"],
+      "trigger_conditions": {
+        "health_trend_surge": {
+          "condition": "健康相关话题进入热搜榜TOP10",
+          "severity": "MEDIUM",
+          "content_focus": "科普解读，辟谣，理性看待",
+          "response_strategy": "蹭热点但保持专业，避免过度炒作"
+        },
+        "food_safety_incident": {
+          "condition": "食品安全相关事件登上热搜",
+          "severity": "CRITICAL",
+          "content_focus": "事实核查，危害分析，替代建议",
+          "response_strategy": "快速响应，基于科学，避免恐慌"
+        },
+        "health_rumor_spread": {
+          "condition": "健康谣言大量传播（关键词'朋友圈疯传'）",
+          "severity": "HIGH",
+          "content_focus": "辟谣，科学解释，正确做法",
+          "response_strategy": "标题明确辟谣，证据充分"
+        }
+      }
+    },
+
+    "ENVIRONMENTAL": {
+      "type_name": "环境变化",
+      "detection_source": ["节气监测", "环境监测站"],
+      "trigger_conditions": {
+        "seasonal_transition": {
+          "condition": "进入新节气 或 节气交接前后3天",
+          "severity": "LOW",
+          "content_focus": "节气养生，调整作息，饮食建议",
+          "response_strategy": "常规节气内容"
+        },
+        "festival_syndrome": {
+          "condition": "重大节日后3天内",
+          "severity": "MEDIUM",
+          "health_impact": ["消化不良", "疲劳", "作息紊乱"],
+          "content_focus": "消食导滞，恢复作息，调整状态",
+          "response_strategy": "节后恢复专题"
+        },
+        "daylight_saving": {
+          "condition": "日照时间显著变化（如冬至后日照变短）",
+          "severity": "LOW",
+          "health_impact": ["情绪低落", "维生素D不足"],
+          "content_focus": "补充维生素D，调节情绪",
+          "response_strategy": "季节性情绪调节建议"
+        }
+      }
+    }
+  },
+
+  "response_workflows": {
+    "CRITICAL_workflow": {
+      "steps": [
+        {
+          "step": 1,
+          "action": "异常检测",
+          "agent": "Agent_8_ChronosEditor",
+          "output": "emergency_event_detected",
+          "duration": "即时"
+        },
+        {
+          "step": 2,
+          "action": "严重性评估",
+          "agent": "Agent_8_ChronosEditor",
+          "output": "severity_assessment_report",
+          "duration": "10分钟"
+        },
+        {
+          "step": 3,
+          "action": "知识库检索",
+          "agent": "Agent_8_ChronosEditor",
+          "output": "relevant_knowledge_packages",
+          "duration": "10分钟"
+        },
+        {
+          "step": 4,
+          "action": "标题生成",
+          "agent": "Agent_7_HeadlineKing",
+          "output": "emergency_headlines",
+          "duration": "15分钟"
+        },
+        {
+          "step": 5,
+          "action": "快速写作",
+          "agent": "Agent_4_ContentArchitect",
+          "mode": "emergency_mode",
+          "output": "emergency_draft",
+          "duration": "60分钟"
+        },
+        {
+          "step": 6,
+          "action": "紧急审核",
+          "agent": "Agent_5_ChiefReviewer",
+          "mode": "fast_track",
+          "output": "reviewed_emergency_content",
+          "duration": "30分钟"
+        },
+        {
+          "step": 7,
+          "action": "人工确认",
+          "agent": "USER",
+          "output": "final_approval",
+          "duration": "30分钟"
+        },
+        {
+          "step": 8,
+          "action": "发布",
+          "agent": "Orchestrator",
+          "output": "content_published",
+          "duration": "即时"
+        }
+      ],
+      "total_time": "约2-3小时",
+      "quality_control": "适当放宽修辞要求，确保准确性和时效性"
+    },
+
+    "HIGH_workflow": {
+      "steps": [
+        {
+          "step": 1,
+          "action": "异常检测与评估",
+          "agent": "Agent_8_ChronosEditor",
+          "output": "event_assessment",
+          "duration": "30分钟"
+        },
+        {
+          "step": 2,
+          "action": "知识库检索与主题关联",
+          "agent": "Agent_8_ChronosEditor",
+          "output": "topic_recommendations",
+          "duration": "30分钟"
+        },
+        {
+          "step": 3,
+          "action": "标题生成",
+          "agent": "Agent_7_HeadlineKing",
+          "output": "headlines",
+          "duration": "20分钟"
+        },
+        {
+          "step": 4,
+          "action": "内容创作",
+          "agent": "Agent_4_ContentArchitect",
+          "output": "draft",
+          "duration": "3小时"
+        },
+        {
+          "step": 5,
+          "action": "质量审核",
+          "agent": "Agent_5_ChiefReviewer",
+          "output": "reviewed_content",
+          "duration": "1小时"
+        },
+        {
+          "step": 6,
+          "action": "发布",
+          "agent": "Orchestrator",
+          "output": "published",
+          "duration": "即时"
+        }
+      ],
+      "total_time": "约5-6小时",
+      "quality_control": "标准质量要求"
+    },
+
+    "MEDIUM_workflow": {
+      "steps": [
+        {
+          "step": 1,
+          "action": "事件识别",
+          "agent": "Agent_8_ChronosEditor",
+          "output": "event_notice",
+          "duration": "每日例行检查"
+        },
+        {
+          "step": 2,
+          "action": "排期调整",
+          "agent": "Orchestrator",
+          "output": "updated_schedule",
+          "action": "将相关内容插入下周排期，优先级提高"
+        },
+        {
+          "step": 3,
+          "action": "常规内容生产",
+          "agents": "Agent_2,3,4,5,6,7",
+          "output": "completed_article",
+          "duration": "标准流程时间"
+        }
+      ],
+      "total_time": "按标准流程，3-5天内完成",
+      "quality_control": "标准质量要求"
+    },
+
+    "LOW_workflow": {
+      "steps": [
+        {
+          "step": 1,
+          "action": "常规监测",
+          "agent": "Agent_8_ChronosEditor",
+          "output": "routine_notice",
+          "duration": "每日例行"
+        },
+        {
+          "step": 2,
+          "action": "按原计划执行",
+          "agent": "Orchestrator",
+          "output": "scheduled_content",
+          "action": "不改变现有排期"
+        }
+      ],
+      "total_time": "按原计划",
+      "quality_control": "标准质量要求"
+    }
+  },
+
+  "event_templates": {
+    "weather_alert_template": {
+      "title_pattern": "{异常类型}来了！{年龄层}要注意{健康风险}，老中医教你{对策}",
+      "example_title": "寒潮来了！中老年人要注意心血管，老中医教你3招护心",
+      "content_structure": [
+        "1. 异常情况描述（当前/预报数据）",
+        "2. 健康风险科普（为什么这个年龄段要注意）",
+        "3. 老中医经验（Old Li讲故事）",
+        "4. 实用对策（3-5条可操作建议）",
+        "5. 饮食建议（具体食材+做法）",
+        "6. 禁忌提醒（什么不能做）"
+      ]
+    },
+
+    "health_emergency_template": {
+      "title_pattern": "{疾病}高发期！{症状}要当心，{对策方法}很管用",
+      "example_title": "流感高发期！突然高烧全身酸痛要当心，老中医的这碗汤很管用",
+      "content_structure": [
+        "1. 疾情通报（当前情况+趋势）",
+        "2. 早期识别（什么症状要警惕）",
+        "3. 易感人群（哪些人风险高）",
+        "4. 预防措施（日常如何防护）",
+        "5. 中医调理（增强免疫力方法）",
+        "6. 饮食方（具体食疗方）",
+        "7. 何时就医（红旗征兆）"
+      ]
+    },
+
+    "food_safety_template": {
+      "title_pattern": "{问题食品}被曝光！老李告诉你{替代方案}更安全",
+      "example_title": "某品牌蜂蜜被曝光！老李告诉你3种鉴别真假蜂蜜的方法",
+      "content_structure": [
+        "1. 事件简述（客观陈述事实）",
+        "2. 风险分析（对健康的影响）",
+        "3. 辟谣（不要过度恐慌）",
+        "4. 鉴别方法（如何选购正品）",
+        "5. 替代方案（其他安全选择）",
+        "6. 老李经验（工厂/生活故事）"
+      ]
+    },
+
+    "festival_syndrome_template": {
+      "title_pattern": "节日{症状}？{调理方法}快速恢复状态",
+      "example_title": "春节后胃胀不消化？老中医这碗消食汤，两天就恢复",
+      "content_structure": [
+        "1. 症状共鸣（你是不是也这样）",
+        "2. 原因分析（为什么会这样）",
+        "3. 中医解释（脾胃受伤/湿气重等）",
+        "4. 调理方案（分步骤恢复）",
+        "5. 饮食建议（清淡+具体食谱）",
+        "6. 作息调整（睡眠+运动）",
+        "7. 老李叮嘱（过来人经验）"
+      ]
+    }
+  },
+
+  "integration_with_seasonal_encyclopedia": {
+    "mapping_logic": {
+      "weather_to_solar_term": "将天气异常映射到当前节气，检索该节气的养生知识",
+      "health_to_body_impact": "根据健康事件，检索相关脏腑的系统知识",
+      "event_to_dietary": "根据事件类型，推荐对应的食疗方案"
+    },
+    "example": {
+      "event": "极端高温 38℃",
+      "current_solar_term": "大暑",
+      "retrieved_knowledge": [
+        "大暑的养生重点：清热解暑，补气生津",
+        "大暑推荐食物：绿豆、西瓜、苦瓜、冬瓜",
+        "高温禁忌：大补之物，辛辣油腻"
+      ],
+      "old_li_voice": "我在工厂的时候，三伏天车间里40度，老师傅就教我这碗绿豆汤..."
+    }
+  },
+
+  "api_event_structure": {
+    "event_object": {
+      "event_id": "string (UUID)",
+      "event_type": "WEATHER | HEALTH | SOCIAL | ENVIRONMENTAL",
+      "severity": "CRITICAL | HIGH | MEDIUM | LOW",
+      "detected_at": "ISO 8601 timestamp",
+      "source": "和风天气API | 微博热搜 | 疾控中心...",
+      "data": {
+        "description": "string (事件描述)",
+        "metrics": "object (具体数据，如温度、AQI等)",
+        "duration": "string (预计持续时间)",
+        "affected_areas": "array (受影响地区)"
+      },
+      "health_impact": {
+        "risks": "array (健康风险列表)",
+        "affected_groups": "array (易感人群)"
+      },
+      "recommended_content": {
+        "focus": "string (内容重点)",
+        "keywords": "array (关键词)",
+        "tone": "string (语气风格：紧急/温和/常规)"
+      },
+      "status": "DETECTED | ASSESSING | RESPONDING | COMPLETED",
+      "uco_id": "string (关联的UCO对象ID)"
+    }
+  },
+
+  "old_li_emergency_voice": {
+    "CRITICAL": "这种时候不能马虎！老李我当年吃过亏，现在赶紧告诉大家...",
+    "HIGH": "这个事儿得重视。我那会儿在工厂...",
+    "MEDIUM": "又要变天了。老话说得好...",
+    "LOW": "日子到这儿了，该注意的得注意。"
+  }
+}

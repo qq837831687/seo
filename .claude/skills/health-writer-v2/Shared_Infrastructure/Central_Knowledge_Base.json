@@ -1,0 +1,1206 @@
+{
+  "knowledge_base_id": "old_li_health_kb_01",
+  "version": "3.0",
+  "last_updated": "2026-01-20T15:45:00Z",
+  "metadata": {
+    "created_by": "Human",
+    "purpose": "中老年养生饮食公众号 - 中央知识库",
+    "access_control": "All Agents Read/Write"
+  },
+
+  "fact_base": {
+    "fact_base_id": "health_facts_01",
+    "last_updated": "2026-01-20T14:00:00Z",
+
+    "classical_tcm_books": {
+      "suixiju_dietary_therapy": {
+        "book_name": "《随息居饮食谱》",
+        "author": "王孟英（王士雄）",
+        "dynasty": "清代",
+        "years": "1808-1868",
+        "core_philosophy": "饮食为日用之常，味即日用之理。颐生无元妙，节其饮食而已",
+        "key_foods": {
+          "姜": {
+            "nature": "辛热",
+            "efficacy": "散风寒，温中去痰湿，止呕定痛",
+            "usage": "开胃，止呕，解毒",
+            "note": "阴虚内热者忌服"
+          },
+          "蒜": {
+            "nature": "辛温",
+            "efficacy": "开胃消食",
+            "usage": "杀菌解毒",
+            "note": "多食损目"
+          },
+          "葱": {
+            "nature": "辛散",
+            "efficacy": "通阳散寒",
+            "usage": "感冒风寒"
+          },
+          "梨": {
+            "nature": "甘凉",
+            "efficacy": "润肺，清胃凉心，涤热息风",
+            "usage": "清热生津，化痰止咳",
+            "note": "脾胃虚寒者宜煮熟食"
+          },
+          "苹果": {
+            "nature": "甘凉",
+            "efficacy": "生津止渴，润肺除烦",
+            "usage": "鲜食或制脯",
+            "note": "可盐曝、糖收、蜜渍"
+          },
+          "山楂": {
+            "nature": "酸甘温",
+            "efficacy": "醒脾气，消肉食，破瘀血",
+            "usage": "消化不良，食积",
+            "note": "脾弱者忌，大病后忌"
+          },
+          "葡萄": {
+            "nature": "甘酸温",
+            "efficacy": "补气，滋肾液，益肝阴",
+            "usage": "强筋骨，利小便",
+            "note": "多食患淋"
+          },
+          "韭菜": {
+            "nature": "辛温",
+            "efficacy": "助肾补阳，暖胃",
+            "usage": "补肾阳，暖腰膝"
+          },
+          "萝卜": {
+            "nature": "辛甘凉",
+            "efficacy": "下气化痰，消食",
+            "usage": "消食化积，化痰止咳",
+            "note": "生食升气，熟食降气"
+          },
+          "南瓜": {
+            "nature": "甘温",
+            "efficacy": "耐饥，补中益气",
+            "usage": "充饥，补益",
+            "note": "早收者嫩可充馔"
+          },
+          "冬瓜": {
+            "nature": "甘平",
+            "efficacy": "清热，养胃生津，涤秽除烦",
+            "usage": "清热解毒，利尿消肿",
+            "note": "与芦菔同功"
+          },
+          "丝瓜": {
+            "nature": "甘凉",
+            "efficacy": "清热化痰，凉血解毒",
+            "usage": "化痰止咳，解毒消肿",
+            "note": "老则皆可为器"
+          },
+          "苦瓜": {
+            "nature": "苦寒",
+            "efficacy": "涤热，明目清心",
+            "usage": "清热解毒，明目",
+            "note": "青则可酱可腌"
+          },
+          "黄瓜": {
+            "nature": "甘寒",
+            "efficacy": "清热，利水，解毒",
+            "usage": "生食醒酒涤热",
+            "note": "糖腌充果"
+          },
+          "茄子": {
+            "nature": "甘凉",
+            "efficacy": "活血，止痛，消痈",
+            "usage": "散血瘀，消肿痛"
+          },
+          "豆腐": {
+            "nature": "甘凉",
+            "efficacy": "清热，润燥生津，解毒补中",
+            "usage": "清热润燥，补中益气",
+            "note": "病人可食"
+          },
+          "小米": {
+            "nature": "甘凉",
+            "efficacy": "开胃，养血益气",
+            "usage": "煮粥养胃",
+            "note": "病人食之最宜"
+          },
+          "大米": {
+            "nature": "甘平",
+            "efficacy": "补中益气，养胃和脾",
+            "usage": "日常主食"
+          },
+          "玉米": {
+            "nature": "甘平",
+            "efficacy": "开胃，利尿",
+            "usage": "煮食或制粉"
+          },
+          "羊肉": {
+            "nature": "甘温",
+            "efficacy": "暖中，补气滋营，御风寒",
+            "usage": "温补阳气，御寒",
+            "note": "时病后食之必死"
+          },
+          "牛肉": {
+            "nature": "甘温",
+            "efficacy": "补中益气，健脾养胃",
+            "usage": "补益气血",
+            "note": "牛为稼穑之资"
+          },
+          "鸡肉": {
+            "nature": "甘温",
+            "efficacy": "补虚，暖胃，强筋骨",
+            "usage": "温补脾胃",
+            "note": "动员有疾未可食"
+          },
+          "鸭肉": {
+            "nature": "甘凉",
+            "efficacy": "滋阴，补虚，清热",
+            "usage": "滋阴清热",
+            "note": "嫩者佳，老者有毒"
+          },
+          "鸡蛋": {
+            "nature": "甘平",
+            "efficacy": "补气血，安五脏",
+            "usage": "滋阴润燥",
+            "note": "多食滞气"
+          },
+          "茶": {
+            "nature": "微苦微甘凉",
+            "efficacy": "清心神，醒睡除烦",
+            "usage": "清心醒神",
+            "note": "中虚、湿盛者均忌"
+          },
+          "酒": {
+            "nature": "大热",
+            "efficacy": "行药势，杀百邪恶毒",
+            "usage": "通血脉，御风寒",
+            "note": "勤俭多妨，醉饮伤身"
+          },
+          "醋": {
+            "nature": "酸温",
+            "efficacy": "开胃养肝，强筋暖骨",
+            "usage": "消食，散瘀",
+            "note": "多食伤齿"
+          },
+          "糖": {
+            "nature": "甘温",
+            "efficacy": "补中，缓急，润肺",
+            "usage": "调味补益",
+            "note": "多食生虫"
+          },
+          "盐": {
+            "nature": "咸寒",
+            "efficacy": "凉血，解毒，定痛",
+            "usage": "调味，防腐"
+          },
+          "蜂蜜": {
+            "nature": "甘平",
+            "efficacy": "补中，润燥，止痛",
+            "usage": "润肺止咳，润肠通便",
+            "note": "痰湿禁服"
+          },
+          "芝麻": {
+            "nature": "甘平",
+            "efficacy": "补肝肾，润五脏",
+            "usage": "滋补肝肾，润肠通便"
+          },
+          "百合": {
+            "nature": "甘平",
+            "efficacy": "润肺，补胃清心，定魄息惊",
+            "usage": "润肺止咳，清心安神",
+            "note": "作粉尤佳"
+          },
+          "莲子": {
+            "nature": "甘平",
+            "efficacy": "补脾，养心，益肾",
+            "usage": "健脾止泻，养心安神",
+            "note": "大便燥者勿服"
+          },
+          "枸杞": {
+            "nature": "甘平",
+            "efficacy": "补肾，润肺，生精益气",
+            "usage": "滋补肝肾，明目",
+            "note": "与葡萄同功"
+          }
+        },
+        "dietary_principles": [
+          "食而不知其味，已为素餐",
+          "饱食无教，则近于禽兽",
+          "饮食失宜，或以害身命",
+          "节其饮食，颐生无元妙"
+        ]
+      },
+      "yixue_zhongcan_xilu": {
+        "book_name": "《医学衷中参西录》",
+        "author": "张锡纯",
+        "years": "1860-1933",
+        "year_published": "1909",
+        "core_philosophy": "沟通中西，以中医为主体，取西医之长补中医之短",
+        "key_prescriptions": {
+          "资生汤": {
+            "indication": "劳瘵羸弱已甚，饮食减少，喘促咳嗽，身热脉虚数者。亦治女子血枯不月",
+            "ingredients": "生山药（一两），玄参（五钱），于术（三钱），生鸡内金（二钱，捣碎），牛蒡子（三钱，炒，捣）",
+            "modifications": "热甚者，加生地黄五六钱",
+            "mechanism": "脾为后天之本，能资生一身。脾胃健壮，多能消化饮食，则全身自然健壮",
+            "key_points": "山药以滋胃之阴，于术以健脾之阳，玄参以去上焦之浮热"
+          },
+          "十全育真汤": {
+            "indication": "虚劳，脉弦、数、细、微，肌肤甲错，形体羸瘦，饮食不壮筋力，或自汗，或咳逆，或喘促，或寒热不时，或多梦纷纭，精气不固",
+            "ingredients": "野台参（四钱），生黄芪（四钱），生山药（四钱），知母（四钱），玄参（四钱），生龙骨（四钱，捣细），生牡蛎（四钱，捣细），丹参（二钱），三棱（钱半），莪术（钱半）",
+            "modifications": "气分虚甚者，去三棱、莪术，加生鸡内金三钱；喘者，倍山药，加牛蒡子三钱",
+            "mechanism": "劳瘵者多兼瘀血，于补药剂中加三棱、莪术以通活气血",
+            "key_points": "黄芪温升补气，知母寒润滋阴，二药并用大具阳升阴应云行雨施之妙"
+          },
+          "醴泉饮": {
+            "indication": "虚劳发热，或喘或嗽，脉数而弱",
+            "ingredients": "生山药（一两），大生地（五钱），人参（四钱），玄参（四钱），生赭石（四钱，轧细），牛蒡子（三钱，炒，捣），天冬（四钱），甘草（二钱）",
+            "mechanism": "人参以补助气分，与玄参、天冬之凉润者并用，又能补助阴分",
+            "key_points": "赭石之压力最胜者，可使人参补益之力下行直至涌泉"
+          },
+          "一味薯蓣饮": {
+            "indication": "劳瘵发热，或喘或嗽，或自汗，或心中怔忡，或因小便不利，致大便滑泻，及一切阴分亏损",
+            "ingredients": "生怀山药（四两，切片）",
+            "method": "煮汁两大碗，以之当茶，徐徐温饮之",
+            "mechanism": "山药之性，能滋阴又能利湿，能滑润又能收涩。是以能补肺补肾兼补脾胃",
+            "key_points": "特性甚和平，宜多服常服"
+          },
+          "参麦汤": {
+            "indication": "阴分亏损已久，浸至肺虚有痰，咳嗽劳喘，或兼肺有结核者",
+            "ingredients": "人参（三钱），干麦冬（四钱，带心），生山药（六钱），清半夏（二钱），牛蒡子（三钱，炒，捣），苏子（二钱，炒，捣），生杭芍（三钱），甘草（钱半）",
+            "mechanism": "人参为补肺之主药，而有肺热还伤肺之虞，有麦冬以佐之，则转能退热",
+            "key_points": "麦冬与半夏同用，转能止嗽"
+          },
+          "珠玉二宝粥": {
+            "indication": "脾肺阴分亏损，饮食懒进，虚热劳嗽，并治一切阴虚之证",
+            "ingredients": "生山药（二两），生薏米（二两），柿霜饼（八钱）",
+            "method": "先将山药、薏米捣成粗渣，煮至烂熟，再将柿霜饼切碎，调入融化，随意服之",
+            "mechanism": "山药、薏米皆清补脾肺之药。然单用山药，久则失于粘腻；单用薏米，久则失于淡渗；惟等分并用，乃可久服无弊",
+            "key_points": "不但疗病，并可充饥"
+          },
+          "水晶桃": {
+            "indication": "肺肾两虚，或咳嗽，或喘逆，或腰膝酸疼，或四肢无力，以治孺子尤佳",
+            "ingredients": "核桃仁（一斤），柿霜饼（一斤）",
+            "method": "先将核桃仁饭甑蒸熟，再与柿霜饼同装入瓷器内蒸之，融化为一，晾冷，随意服",
+            "mechanism": "柿霜色白入肺，而甘凉滑润；核桃补肾，肺肾同补，金水相生",
+            "key_points": "食之又甚适口，饥时可随便服之"
+          },
+          "既济汤": {
+            "indication": "大病后阴阳不相维系。阳欲上脱，或喘逆，或自汗，或目睛上窜；阴欲下脱，或失精，或小便不禁，或大便滑泻。一切阴阳两虚，上热下凉之证",
+            "ingredients": "大熟地（一两），萸肉（去净核，一两），生山药（六钱），生龙骨（捣细，六钱），生牡蛎（捣细，六钱），茯苓（三钱），生杭芍（三钱），乌附子（一钱）",
+            "mechanism": "阳之上脱也，皆因真阴虚损，不能潜藏元阳。故方中重用熟地、山药以峻补真阴，俾阴足自能潜阳",
+            "key_points": "人参之性补而兼升，以治上脱，转有气高不返之虞，故不用人参"
+          },
+          "来复汤": {
+            "indication": "寒温外感诸证，大病瘥后不能自复，寒热往来，虚汗淋漓；或但热不寒，汗出而热解，须臾又热又汗，目睛上窜，势危欲脱",
+            "ingredients": "萸肉（去净核，二两），生龙骨（捣细，一两），生牡蛎（捣细，一两），生杭芍（六钱），野台参（四钱），甘草（二钱，蜜炙）",
+            "mechanism": "凡人元气之脱，皆脱在肝。故人虚极者，其肝风必先动，肝风动，即元气欲脱之兆也",
+            "key_points": "萸肉救脱之功，较参、术、芪更胜"
+          }
+        },
+        "key_herbs": {
+          "山药": {
+            "nature": "性平，味甘",
+            "efficacy": "补肺补肾兼补脾胃，能滋阴又能利湿，能滑润又能收涩",
+            "usage": "为滋补药中无上之品，特性甚和平，宜多服常服",
+            "note": "含蛋白质最多"
+          },
+          "人参": {
+            "nature": "性温，味甘微苦",
+            "efficacy": "补助气分，大补元气",
+            "usage": "补肺之主药，与麦冬同用转能退热",
+            "note": "其性补而兼升，以治上脱，转有气高不返之虞"
+          },
+          "黄芪": {
+            "nature": "性温，味甘",
+            "efficacy": "温升补气，大补肺气以益肾水之源",
+            "usage": "与知母并用大具阳升阴应云行雨施之妙",
+            "note": "气旺自能生水"
+          },
+          "知母": {
+            "nature": "性寒，味苦甘",
+            "efficacy": "寒润滋阴，大能滋肺中津液",
+            "usage": "与黄芪并用，能退虚热",
+            "note": "俾阴阳不至偏胜"
+          },
+          "玄参": {
+            "nature": "性微寒，味甘胜于苦",
+            "efficacy": "去上焦之浮热，即以退周身之烧热",
+            "usage": "补肾气，故以治劳瘵之阴虚者尤宜",
+            "note": "不至寒凉伤脾胃"
+          },
+          "鸡内金": {
+            "nature": "性甚和平",
+            "efficacy": "善化有形郁积",
+            "usage": "消瘀血之坚结，善化瘀血",
+            "note": "有以脾胃补脾胃之妙"
+          },
+          "三棱莪术": {
+            "nature": "性破血",
+            "efficacy": "既善破血，尤善调气",
+            "usage": "与参、术、芪诸药并用，大能开胃进食",
+            "note": "破血药中独喜用之"
+          },
+          "山茱萸": {
+            "nature": "酸敛",
+            "efficacy": "不独补肝也，凡人身之阴阳气血将散者，皆能敛之",
+            "usage": "救脱之药，当以萸肉为第一",
+            "note": "其味酸能敛，补络补管"
+          },
+          "龙骨牡蛎": {
+            "nature": "收涩",
+            "efficacy": "收敛元气，固涩精气",
+            "usage": "止汗，固精",
+            "note": "若取其开通之性，又能助三棱、莪术以消融瘀滞"
+          }
+        },
+        "treatment_principles": [
+          "治劳瘵者多兼瘀血，于补药剂中加三棱、莪术以通活气血",
+          "黄芪温升补气，乃将雨时上升之阳气也；知母寒润滋阴，乃将雨时四合之阴云也。二药并用，大具阳升阴应云行雨施之妙",
+          "脉之数者，固系阴虚，亦系气分虚弱",
+          "肾气丸虽非专治虚劳之药，实兼为开瘀血之药",
+          "人之真阴阳，不但互相维系，且互相并根"
+        ]
+      }
+    },
+
+    "official_food_medicine_list": {
+      "source": "国家卫生健康委员会",
+      "last_updated": "2024年1月",
+      "description": "按照传统既是食品又是中药材物质目录",
+      "total_items": 114,
+      "batches": {
+        "第一批_1987": {
+          "year": "1987",
+          "count": 61,
+          "items": [
+            "人参（5年及以下人工种植）", "山楂", "枸杞子", "玉竹", "龙眼肉（桂圆）",
+            "决明子", "百合", "肉豆蔻", "肉桂", "余甘子", "佛手", "杏仁（甜、苦）",
+            "沙棘", "芡实", "花椒", "赤小豆", "麦芽", "昆布（海带）", "枣（大枣、酸枣、黑枣）",
+            "罗汉果", "郁李仁", "金银花", "青果", "鱼腥草", "姜（生姜、干姜）", "枳椇子",
+            "栀子", "砂仁", "胖大海", "茯苓", "香橼", "香薷", "桃仁", "桑叶", "桑椹",
+            "橘皮（陈皮）", "桔梗", "益智仁", "荷叶", "莱菔子", "莲子", "高良姜", "淡竹叶",
+            "菊花", "黄芥子", "黄精", "紫苏", "葛根", "槐米", "蒲公英", "蝉蜕", "酸枣仁",
+            "鲜白茅根", "鲜芦根", "橘红", "薄荷", "薏苡仁", "薤白", "覆盆子", "甘草", "藿香"
+          ]
+        },
+        "第二批_2002": {
+          "year": "2002",
+          "count": 27,
+          "items": [
+            "八角茴香", "刀豆", "小茴香", "山药", "木瓜", "白扁豆", "白芷", "白果",
+            "车前子", "土茯苓", "广藿香"
+          ]
+        },
+        "第三批_2012": {
+          "year": "2012",
+          "count": 8,
+          "items": [
+            "人参（3年及5年以下人工种植）", "当归", "西洋参", "姜黄", "荞麦",
+            "荜茇", "陈皮", "草果", "草豆蔻"
+          ]
+        },
+        "2020年新增": {
+          "year": "2020",
+          "count": 9,
+          "items": [
+            "人参（人工种植，5年以上）", "山银花", "羊乳（党参）", "芫荽（香菜）",
+            "玫瑰花", "松花粉", "油菜花粉", "玉米花粉", "向日葵花粉"
+          ]
+        },
+        "2024年新增": {
+          "year": "2024",
+          "count": 6,
+          "items": [
+            "党参", "肉苁蓉（管花肉苁蓉）", "铁皮石斛", "西洋参（已列入，更新说明）",
+            "黄芪", "灵芝"
+          ]
+        }
+      },
+      "classification_by_part": {
+        "根及根茎类": ["人参", "当归", "党参", "黄芪", "甘草", "葛根", "山药"],
+        "茎木类": ["槲寄生", "桂枝"],
+        "皮类": ["肉桂", "陈皮", "橘皮", "姜黄"],
+        "叶类": ["桑叶", "紫苏叶", "薄荷叶"],
+        "花类": ["菊花", "金银花", "玫瑰花"],
+        "果实类": ["山楂", "枸杞", "大枣", "罗汉果", "砂仁"],
+        "种子类": ["杏仁", "桃仁", "决明子", "酸枣仁", "薏苡仁"],
+        "全草类": ["薄荷", "藿香", "蒲公英"],
+        "菌藻类": ["茯苓", "灵芝"],
+        "其他": ["花粉类", "树脂类"]
+      },
+      "classification_by_efficacy": {
+        "补益类": ["人参", "黄芪", "当归", "党参", "黄精", "枸杞子"],
+        "理气类": ["陈皮", "佛手", "香橼", "砂仁"],
+        "活血类": ["桃仁", "红花"],
+        "清热类": ["金银花", "菊花", "蒲公英", "鱼腥草"],
+        "化痰类": ["桔梗", "陈皮", "半夏"],
+        "消食类": ["山楂", "麦芽", "莱菔子"],
+        "安神类": ["酸枣仁", "百合", "龙眼肉"],
+        "解表类": ["生姜", "紫苏", "薄荷", "香薷"],
+        "祛风湿类": ["木瓜", "桑枝"],
+        "利水渗湿类": ["茯苓", "薏苡仁", "赤小豆", "车前子"],
+        "温里类": ["肉桂", "干姜", "高良姜", "小茴香", "花椒"],
+        "收涩类": ["莲子", "芡实", "覆盆子", "肉豆蔻"]
+      },
+      "usage_notes": {
+        "principles": [
+          "虽然这些物品既是食品又是药品，但仍需适量使用",
+          "应根据自身体质和健康状况合理选择",
+          "不宜长期大量食用单一物品",
+          "特殊人群（孕妇、儿童、慢性病患者）应谨慎使用"
+        ],
+        "contraindications": [
+          "过敏体质者应避免食用过敏物品",
+          "患有特定疾病时应遵医嘱使用",
+          "不宜与相克药物或食物同用",
+          "出现不良反应应立即停止使用"
+        ],
+        "legal_compliance": [
+          "禁止宣传疾病预防、治疗功能",
+          "保健食品中使用需符合相关规定",
+          "普通食品中不得超出限量标准",
+          "标签标识应符合要求"
+        ]
+      },
+      "reference_sources": {
+        "official_websites": [
+          "国家卫生健康委员会官网: www.nhc.gov.cn",
+          "国家市场监督管理总局官网: www.samr.gov.cn",
+          "中国食品安全网: www.cfsn.cn"
+        ],
+        "regulations": [
+          "《中华人民共和国食品安全法》",
+          "《中华人民共和国药品管理法》",
+          "《保健食品原料目录与保健功能目录管理办法》",
+          "《新食品原料安全性审查管理办法》",
+          "《按照传统既是食品又是中药材物质目录》"
+        ]
+      }
+    },
+
+    "tcm_theory": {
+      "five_elements": {
+        "spring_liver": {
+          "name": "春养肝",
+          "time": "立春-立夏 (2-5月)",
+          "element": "木",
+          "organ": "肝",
+          "characteristics": "万物生长，肝气旺盛",
+          "foods": ["韭菜", "菠菜", "芹菜", "葱", "蒜", "草莓"],
+          "method": "凉拌为主，不过火",
+          "taboos": ["辛辣", "油腻"],
+          "personal_note": "父亲那年春天吃过韭菜炒鸡蛋，情绪稳定些"
+        },
+        "summer_heart": {
+          "name": "夏养心",
+          "time": "立夏-立秋 (5-8月)",
+          "element": "火",
+          "organ": "心",
+          "characteristics": "天气炎热，心火旺盛",
+          "foods": ["苦瓜", "莲子", "绿豆", "西瓜", "冬瓜"],
+          "method": "清热去火",
+          "taboos": ["过于寒凉"],
+          "note": "清热但不贪凉"
+        },
+        "late_summer_spleen": {
+          "name": "长夏养脾",
+          "time": "小暑-立秋 (7-8月)",
+          "element": "土",
+          "organ": "脾",
+          "characteristics": "湿气重，脾胃虚弱",
+          "foods": ["山药", "莲子", "白扁豆", "薏米"],
+          "method": "健脾祛湿",
+          "personal_note": "自己脾胃虚寒，用姜茶+山药调理3个月"
+        },
+        "autumn_lung": {
+          "name": "秋养肺",
+          "time": "立秋-立冬 (8-11月)",
+          "element": "金",
+          "organ": "肺",
+          "characteristics": "天气干燥，肺气娇嫩",
+          "foods": ["梨", "百合", "银耳", "蜂蜜", "白萝卜"],
+          "method": "润肺生津",
+          "taboos": ["辛辣刺激"],
+          "note": "润肺但不伤胃"
+        },
+        "winter_kidney": {
+          "name": "冬养肾",
+          "time": "立冬-立春 (11-2月)",
+          "element": "水",
+          "organ": "肾",
+          "characteristics": "天气寒冷，需要闭藏",
+          "foods": ["黑芝麻", "核桃", "栗子", "羊肉", "黑豆"],
+          "method": "温补阳气",
+          "taboos": ["生冷寒凉"],
+          "note": "驱寒但不过量"
+        }
+      },
+
+      "principles": [
+        {
+          "principle": "顺时而食",
+          "explanation": "吃当季食材，顺应自然",
+          "examples": ["春天吃韭菜", "夏天喝绿豆汤", "秋天吃梨", "冬天吃羊肉"]
+        },
+        {
+          "principle": "适度为宜",
+          "explanation": "过犹不及，什么都适量",
+          "examples": ["绿豆清热但脾胃虚寒少用", "羊肉驱寒但体质偏热少用"]
+        },
+        {
+          "principle": "因人而异",
+          "explanation": "体质不同，方法不同",
+          "examples": ["别人有效的，你可能无效", "要听身体的"]
+        }
+      ]
+    },
+
+    "nutrition": {
+      "key_ingredients": {
+        "yam_山药": {
+          "efficacy": "健脾养胃",
+          "nature": "性平",
+          "suitable_for": "脾胃虚弱",
+          "precaution": "要坚持才有效，因人而异",
+          "personal_case": "我自己脾胃虚寒，用山药+小米煮粥，坚持3个月明显改善"
+        },
+        "ginger_生姜": {
+          "efficacy": "温中散寒",
+          "nature": "性温",
+          "suitable_for": "胃寒、呕吐、怕冷",
+          "precaution": "不宜过量，体质偏热、有炎症少用",
+          "usage": "早上喝最好，3-5片+红枣+红糖"
+        },
+        "red_date_红枣": {
+          "efficacy": "补气血",
+          "nature": "性温",
+          "suitable_for": "气血不足",
+          "precaution": "糖尿病患者注意糖量，湿气重、胃不好的人少用"
+        },
+        "mung_bean_绿豆": {
+          "efficacy": "清热解毒",
+          "nature": "性寒",
+          "suitable_for": "夏季、上火",
+          "precaution": "脾胃虚寒少用"
+        },
+        "chinese_leek_韭菜": {
+          "efficacy": "温阳补肝肾",
+          "nature": "性温",
+          "suitable_for": "春季养肝",
+          "precaution": "肝火旺者少吃，不宜久用"
+        }
+      }
+    }
+  },
+
+  "opinion_case_bank": {
+    "opinion_case_bank_id": "old_li_cases_01",
+    "last_updated": "2026-01-20T10:00:00Z",
+
+    "quotations": {
+      "old_li_quotes": [
+        {
+          "quote_id": "quote_001",
+          "text": "这8年护工生涯，把自己熬干了",
+          "context": "总结8年照顾失能父母的经历",
+          "emotion": "真实、辛酸、不卖惨",
+          "usage_frequency": "high",
+          "effectiveness": 9.5,
+          "suitable_for": ["文章开头", "情感升华"]
+        },
+        {
+          "quote_id": "quote_002",
+          "text": "久病床前无孝子，不是子女不孝，是这活儿，太难了",
+          "context": "对养老问题的深刻理解",
+          "emotion": "理性、不指责、深刻",
+          "usage_frequency": "high",
+          "effectiveness": 9.8,
+          "suitable_for": ["文章核心观点", "结尾升华"]
+        },
+        {
+          "quote_id": "quote_003",
+          "text": "所以我现在特别注重养生，不是怕死，是怕瘫",
+          "context": "解释为什么重视养生",
+          "emotion": "真诚、实在",
+          "usage_frequency": "high",
+          "effectiveness": 9.2,
+          "suitable_for": ["过渡段落", "价值观表达"]
+        },
+        {
+          "quote_id": "quote_004",
+          "text": "我亲身体会，亲身经历告诉我",
+          "context": "引入亲身经历",
+          "emotion": "可信、真实",
+          "usage_frequency": "high",
+          "effectiveness": 8.8,
+          "suitable_for": ["故事引入", "经验分享"]
+        },
+        {
+          "quote_id": "quote_005",
+          "text": "不为别的，是不想拖累孩子",
+          "context": "表达养老决定",
+          "emotion": "无奈但坚定",
+          "usage_frequency": "medium",
+          "effectiveness": 9.0,
+          "suitable_for": ["结尾升华", "价值观总结"]
+        }
+      ]
+    },
+
+    "personal_stories": [
+      {
+        "story_id": "story_001",
+        "title": "8年护工生涯",
+        "tags": ["养老", "护工", "失能", "真实经历", "核心故事"],
+        "summary": "65岁退休工人，24小时照顾失能父母（父亲92岁、母亲94岁）8年，身心俱疲",
+        "key_takeaway": "比死更可怕的，是瘫。养生不是怕死，是怕瘫",
+
+        "emotional_arc": {
+          "opening": "退休后本想旅行，结果成了24小时护工",
+          "middle": "父亲半夜乱跑，大小便失禁；母亲脾气变怪，摔碗崴脚",
+          "climax": "送走父母后，老伴说'以后咱俩这样了，别拖累孩子'，我红了眼",
+          "ending": "决定注重养生，提前规划，不拖累儿子"
+        },
+
+        "details": {
+          "father": {
+            "condition": "老年痴呆+脑梗，半失能",
+            "symptoms": ["认不出人", "半夜乱跑", "大小便失禁", "情绪不稳"],
+            "challenges": ["24小时待命", "手机不敢离身", "没有个人时间"]
+          },
+          "mother": {
+            "condition": "骨质疏松，脾气古怪",
+            "symptoms": ["经常摔碗", "故意崴脚", "跟邻居说儿媳不孝顺"],
+            "challenges": ["不跟她顶嘴", "顺着她的话", "心理压力"]
+          },
+          "self": {
+            "physical": ["关节炎频发", "腰椎问题", "免疫力下降"],
+            "spouse": ["血糖不稳定", "压力大", "免疫力下降"],
+            "social": ["推掉所有社交", "老伙计约钓鱼只能说'下次'"]
+          }
+        },
+
+        "usage_history": [
+          {
+            "date": "2026-01-15",
+            "article_id": "why_i_value_health",
+            "context": "文章开头，引发共鸣",
+            "performance": {
+              "views": "待统计",
+              "shares": "待统计",
+              "effectiveness": "high"
+            }
+          }
+        ],
+
+        "quotable_excerpts": [
+          "这8年，把自己熬干了",
+          "半夜父亲乱跑，我得24小时待命",
+          "送走父母后，我和老伴在阳台乘凉，她说：'以后咱俩这样了，别拖累孩子'，我红了眼"
+        ]
+      },
+      {
+        "story_id": "story_002",
+        "title": "山药粥调理脾胃",
+        "tags": ["食疗", "脾胃虚寒", "亲身经历", "实用"],
+        "summary": "用山药+小米煮粥，坚持3个月，脾胃虚寒明显改善",
+        "key_takeaway": "食疗要坚持，不是一两次就有效",
+
+        "steps": [
+          "新鲜山药或干山药片",
+          "小米或大米",
+          "煮粥，早晚各一碗",
+          "坚持3个月"
+        ],
+
+        "results": {
+          "before": ["胃寒，吃凉的不舒服", "大便不成形", "手脚冰凉"],
+          "after": ["胃口好了", "大便成形", "手脚没那么凉了"]
+        },
+
+        "precautions": [
+          "要坚持，不是一两次",
+          "因人而异，我是脾胃虚寒",
+          "严重的不行，要去看医生"
+        ],
+
+        "usage_history": [
+          {
+            "date": "2026-01-10",
+            "article_id": "spleen_stomach_recipe",
+            "context": "提供实用食疗方",
+            "performance": {
+              "saves": "待统计",
+              "effectiveness": "medium"
+            }
+          }
+        ]
+      },
+      {
+        "story_id": "story_003",
+        "title": "父亲老年痴呆的应对",
+        "tags": ["老年痴呆", "护理经验", "真实经历"],
+        "summary": "父亲老年痴呆+脑梗，半夜乱跑，大小便失禁，我是怎么应对的",
+        "key_takeaway": "安全问题最重要：防摔倒、防误服、防走失",
+
+        "solutions": {
+          "safety": {
+            "防摔倒": ["床边加围栏", "地毯防滑", "扶手稳固", "穿防滑鞋"],
+            "防误服": ["药品锁起来", "看着吃药", "分类存放", "记录用量"],
+            "防走失": ["门上装锁", "身份证随身", "衣服写名字电话", "告诉邻居"]
+          },
+          "daily_care": {
+            "喂饭": ["有耐心", "不要急", "一小口一小口", "防止呛咳"],
+            "清洁": ["定期擦洗", "更换衣服", "清理床铺", "保持干燥"],
+            "翻身": ["每2小时翻身", "防止褥疮", "按摩受压部位", "检查皮肤"]
+          }
+        },
+
+        "emotional_impact": "最怕半夜，手机不敢离身，随时准备着"
+      }
+    ],
+
+    "tcm_practices": [
+      {
+        "practice_id": "tcm_001",
+        "title": "山药粥调理脾胃虚寒",
+        "tags": ["食疗", "脾胃虚寒", "亲身经验"],
+        "summary": "山药+小米煮粥，坚持3个月，脾胃虚寒明显改善",
+
+        "ingredients": ["山药（新鲜或干片）", "小米或大米"],
+        "method": "煮粥，早晚各一碗",
+        "duration": "坚持3个月",
+
+        "results": {
+          "before": "胃寒、大便不成形、手脚冰凉",
+          "after": "胃口好、大便成形、手脚不凉"
+        },
+
+        "precautions": [
+          "要坚持，不是一两次",
+          "因人而异",
+          "严重的不行，要去看医生"
+        ]
+      },
+      {
+        "practice_id": "tcm_002",
+        "title": "姜茶温阳驱寒",
+        "tags": ["食疗", "胃寒", "驱寒"],
+        "summary": "生姜+红枣+红糖，温中散寒",
+
+        "ingredients": ["生姜3-5片", "红枣3-5个", "红糖适量"],
+        "method": "开水冲泡或煮水喝",
+        "timing": "早上喝最好",
+
+        "suitable_for": ["手脚冰凉", "胃寒", "怕冷"],
+        "not_suitable_for": ["体质偏热", "容易上火", "有炎症"]
+      },
+      {
+        "practice_id": "tcm_003",
+        "title": "红枣银耳汤补气血",
+        "tags": ["食疗", "气血不足"],
+        "summary": "银耳+红枣+冰糖，补气血",
+
+        "ingredients": ["银耳（泡发）", "红枣（去核）", "冰糖"],
+        "method": "炖煮1小时",
+
+        "suitable_for": ["气血不足", "面色苍白", "容易疲劳"],
+        "precautions": ["糖尿病患者注意糖量", "湿气重、胃不好少用"]
+      }
+    ]
+  },
+
+  "asset_library": {
+    "asset_library_id": "health_assets_01",
+    "last_updated": "2026-01-20T10:00:00Z",
+
+    "image_templates": {
+      "food_photos": {
+        "source": "待补充",
+        "style": "温暖、家常、真实",
+        "notes": "避免过度美化，保持真实感"
+      },
+      "tcm_illustrations": {
+        "source": "待补充",
+        "style": "简洁、专业",
+        "notes": "五行养生图、时令食材图"
+      }
+    },
+
+    "reference_sources": {
+      "tcm_authorities": [
+        {
+          "name": "国家中医药管理局",
+          "type": "S级",
+          "website": "https://www.natcm.gov.cn/",
+          "usage": "权威理论来源"
+        },
+        {
+          "name": "老中医经验",
+          "type": "A级",
+          "note": "师承，个人经验",
+          "usage": "实践指导"
+        }
+      ],
+      "nutrition_authorities": [
+        {
+          "name": "中国营养学会",
+          "type": "S级",
+          "website": "https://www.cnsoc.org/",
+          "usage": "营养学依据"
+        }
+      ],
+      "research_databases": [
+        {
+          "name": "中国知网（CNKI）",
+          "type": "A级",
+          "usage": "学术研究"
+        }
+      ]
+    },
+
+    "compliance_dictionary": {
+      "absolute_words": ["最", "第一", "最佳", "顶级", "终极"],
+      "medical_words": ["治疗", "治愈", "根除", "彻底"],
+      "safe_alternatives": {
+        "最": "很、非常、相当",
+        "治疗": "调理、改善、辅助",
+        "治愈": "缓解、改善、帮助"
+      }
+    }
+  },
+
+  "feedback_loop": {
+    "feedback_loop_id": "performance_tracker_01",
+    "last_updated": "2026-01-20T10:00:00Z",
+
+    "success_archive": {
+      "total_articles": 0,
+      "articles": [],
+      "patterns": {
+        "best_performing_topics": [],
+        "best_performing_headlines": [],
+        "best_publishing_times": [],
+        "best_content_length": [],
+        "highest_engagement_types": []
+      }
+    },
+
+    "failure_archive": {
+      "total_articles": 0,
+      "articles": [],
+      "common_issues": {
+        "low_read": [],
+        "low_share": [],
+        "negative_feedback": []
+      }
+    },
+
+    "learning_insights": {
+      "reader_preferences": {
+        "preferred_tone": [],
+        "preferred_length": [],
+        "preferred_topics": [],
+        "preferred_formats": []
+      },
+      "seasonal_trends": {
+        "spring": [],
+        "summer": [],
+        "autumn": [],
+        "winter": []
+      },
+      "demographic_insights": {
+        "age_groups": {},
+        "gender_distribution": {},
+        "geographic_distribution": {}
+      }
+    },
+
+    "viral_patterns": {
+      "extracted_patterns": [],
+      "success_formulas": {
+        "headline": [],
+        "opening": [],
+        "structure": [],
+        "emotion_trigger": []
+      }
+    }
+  },
+
+  "chronos_editor_knowledge": {
+    "knowledge_id": "chronos_editor_kb_01",
+    "version": "1.0",
+    "last_updated": "2026-01-20T15:45:00Z",
+    "description": "Agent 8 时令主编专用知识库 - 时间感知、语义关联、应急响应",
+
+    "seasonal_encyclopedia": {
+      "encyclopedia_id": "seasonal_health_encyclopedia_01",
+      "data_location": "/Users/apple/.claude/skills/health-writer-v2/Data_Structures/seasonal_encyclopedia.json",
+      "contents": {
+        "solar_terms": "24节气完整数据（立春至大寒）",
+        "traditional_festivals": "传统节日（春节、元宵、清明、端午、中秋、重阳）",
+        "modern_festivals": "现代节日（情人节、国庆、光棍节、跨年）",
+        "world_health_days": "世界卫生日、全国老年节等健康相关纪念日"
+      },
+      "each_entry_contains": [
+        "climate_features（气候特征）",
+        "body_impact（身体影响）",
+        "health_focus（养生重点）",
+        "dietary_recommendations（饮食建议）",
+        "old_li_voice（老李原声）"
+      ]
+    },
+
+    "emergency_protocols": {
+      "protocol_id": "emergency_response_01",
+      "data_location": "/Users/apple/.claude/skills/health-writer-v2/Data_Structures/emergency_protocols.json",
+      "contents": {
+        "severity_levels": "4级严重性分级（紧急、重要、一般、提示）",
+        "anomaly_types": "4类异常（天气、健康、社会、环境）",
+        "response_workflows": "4套应急响应流程（CRITICAL/HIGH/MEDIUM/LOW）",
+        "event_templates": "4种应急内容模板（天气预警、健康事件、食品安全、节日综合征）",
+        "api_event_structure": "标准化事件对象定义"
+      }
+    },
+
+    "semantic_matrix": {
+      "matrix_id": "seasonal_semantic_matrix_01",
+      "data_location": "/Users/apple/.claude/skills/health-writer-v2/Data_Structures/semantic_matrix.json",
+      "architecture": {
+        "layer_1_climate": "气候层（温度、湿度、气压、风力、光照、空气质量）",
+        "layer_2_lifestyle": "生活层（作息、饮食、运动、穿着、社交、工作、居家）",
+        "layer_3_emotion": "情绪层（焦虑、愉悦、疲惫、平静、烦躁等）"
+      },
+      "semantic_associations": {
+        "temperature_mappings": "7级温度语义映射（极寒→酷热）",
+        "humidity_mappings": "5级湿度语义映射（极干→极湿）",
+        "seasonal_emotion_patterns": "四季情绪模式",
+        "festival_semantic_mappings": "节日语义关联",
+        "special_population_semantics": "特殊人群语义（中老年、高龄、中年）"
+      },
+      "matching_algorithm": {
+        "name": "Multi-Dimensional Semantic Scoring (MDSS)",
+        "description": "多维度语义评分算法",
+        "default_weights": {
+          "climate": 0.4,
+          "lifestyle": 0.4,
+          "emotion": 0.2
+        }
+      },
+      "old_li_voice_library": {
+        "contextual_quotes": "节气、天气、情绪相关的老李原语录",
+        "total_quotes": "50+ 条场景化语录"
+      }
+    },
+
+    "api_integrations": {
+      "weather_api": {
+        "provider": "和风天气（官方API）",
+        "api_type": "RESTful API",
+        "data_types": [
+          "实时天气（温度、湿度、风速、气压、AQI）",
+          "24小时预报",
+          "7天预报",
+          "天气预警（寒潮、高温、台风等）",
+          "空气质量指数"
+        ],
+        "update_frequency": "每小时",
+        "status": "待配置"
+      },
+      "calendar_api": {
+        "provider": "中国天文日历API",
+        "data_types": [
+          "节气时间",
+          "农历日期",
+          "传统节日"
+        ],
+        "update_frequency": "每日同步",
+        "status": "待配置"
+      }
+    },
+
+    "automated_content_triggers": {
+      "solar_term_triggers": {
+        "trigger_timing": [
+          "节气前3天（预热）",
+          "节气当天（当日内容）",
+          "节气后3天（回顾）"
+        ],
+        "auto_generated_topics": [
+          "{节气}养生指南",
+          "{节气}必吃食材",
+          "{节气}常见错误",
+          "老李的{节气}故事"
+        ]
+      },
+      "weather_triggers": {
+        "extreme_heat": "最高温 ≥ 35℃ → 防暑降温内容",
+        "extreme_cold": "最低温 ≤ -5℃ 或 24h降温 ≥ 10℃ → 防寒保暖内容",
+        "temperature_shock": "昼夜温差 ≥ 15℃ → 适时增减衣物提醒",
+        "air_pollution": "AQI ≥ 200 → 防护清肺内容"
+      },
+      "festival_triggers": {
+        "pre_festival": "节前3天 → 预防性提醒",
+        "during_festival": "节日当天 → 节日养生",
+        "post_festival": "节后3天 → 节后恢复"
+      }
+    },
+
+    "old_li_personal_voice": {
+      "spring_voice": {
+        "lichun": "立春了，该'咬春'了。但这韭菜也不是人人都能吃，胃寒的得悠着点。",
+        "yushui": "雨水一到，湿气就来了。我这老寒腿开始预报天气了。",
+        "jingzhe": "惊蛰了，万物复苏。人也是，该动起来了，别老宅家里。",
+        "chunfen": "春分这天，昼夜平分。人也得平衡，别总熬夜。"
+      },
+      "summer_voice": {
+        "lixia": "立夏了，该养心了。天一热，人就爱烦躁，这时候就得静心。",
+        "mangzhong": "芒种忙种，这时候农活最忙。咱虽然不种地了，但也别闲着。",
+        "xiaoman": "小满小满，麦粒渐满。人也一样，知足常乐。",
+        "dashu": "大暑天，最怕贪凉。我那工友，大汗淋漓直接冲冷水澡，当场就晕了。"
+      },
+      "autumn_voice": {
+        "liqiu": "立秋了，但还没凉快呢，这叫'秋老虎'。别急着进补，先祛湿。",
+        "bailu": "白露身不露。这天一凉，我就想起秀芳，她总这时候给我织毛衣。",
+        "hanlu": "寒露脚不露。这时候得穿袜子了，别等到冻坏了再后悔。",
+        "shuangjiang": "霜降杀百草。天凉了，该进补了。但也别瞎补，得看体质。"
+      },
+      "winter_voice": {
+        "lidong": "立冬了，该'补冬'了。但也不能瞎补，得看体质。我就不适合大补，一补就上火。",
+        "daxue": "大雪天，我就爱窝在家里。年轻时还爱出去打雪仗，现在就算了，省得滑倒。",
+        "dongzhi": "冬至大如年。这一天得吃饺子，不是为了过节，是为了不冻耳朵。这是老规矩。",
+        "xiaohan": "小寒大寒，冻成一团。这时候就得'猫冬'，窝在家里，喝点热乎的。"
+      }
+    },
+
+    "optimization_metrics": {
+      "semantic_matching_accuracy": "语义匹配准确率（目标：≥ 85%）",
+      "emergency_response_speed": "应急响应速度（CRITICAL: ≤ 2h, HIGH: ≤ 24h）",
+      "content_relevance": "内容相关度评分（用户反馈）",
+      "seasonal_timeliness": "时令内容及时性"
+    }
+  },
+
+  "viral_patterns_database": {
+    "database_id": "viral_patterns_01",
+    "last_updated": "2026-01-20T10:00:00Z",
+
+    "headline_formulas": [
+      {
+        "formula_id": "hf_001",
+        "pattern": "[数字]种[功效]食材，[时间]必吃",
+        "examples": [
+          "春天养肝必吃这3种菜，90%的人不知道",
+          "这5种养肝食材，春天吃错过再等一年"
+        ],
+        "success_rate": 0.85,
+        "avg_ctr": 0.12
+      },
+      {
+        "formula_id": "hf_002",
+        "pattern": "老中医的[方/法]，比[对比对象]还管用",
+        "examples": [
+          "老中医的养肝方，比吃药还管用",
+          "老中医的降糖法，比胰岛素还稳"
+        ],
+        "success_rate": 0.78,
+        "avg_ctr": 0.10
+      },
+      {
+        "formula_id": "hf_003",
+        "pattern": "[身份]必看，这[数字]件事要注意",
+        "examples": [
+          "中老年人必看，这5件事要注意",
+          "50岁以后必看，这3个习惯要改"
+        ],
+        "success_rate": 0.82,
+        "avg_ctr": 0.11
+      }
+    ],
+
+    "opening_hooks": [
+      {
+        "hook_id": "oh_001",
+        "type": "场景化引入",
+        "pattern": "[时间]+[场景]+[共鸣]",
+        "examples": [
+          "周五晚上10点，办公室的灯熄了一半。35岁的小张还在工位上加班",
+          "凌晨2点，父亲又要上厕所，我赶紧起床"
+        ],
+        "effectiveness": 9.0
+      },
+      {
+        "hook_id": "oh_002",
+        "type": "亲身经历引入",
+        "pattern": "我[经历]+[感悟]",
+        "examples": [
+          "我65岁了，退休前在厂里开铣床。这8年护工生涯，让我明白了健康的重要性",
+          "我自己调理脾胃3个月，效果不错。今天想和大家分享一下"
+        ],
+        "effectiveness": 9.5
+      },
+      {
+        "hook_id": "oh_003",
+        "type": "问题引入",
+        "pattern": "[痛点]+[数据/反差]",
+        "examples": [
+          "你知道吗？中国有4000万失能老人，背后是数千万个家庭",
+          "90%的人都不知道，春天养肝吃错了反而伤身"
+        ],
+        "effectiveness": 8.5
+      }
+    ],
+
+    "structure_patterns": [
+      {
+        "pattern_id": "sp_001",
+        "name": "问题-分析-解决（SCQA）",
+        "sections": ["情境(Situation)", "冲突(Complication)", "问题(Question)", "答案(Answer)"],
+        "suitable_for": ["科普类", "辟谣类"],
+        "usage_frequency": "high"
+      },
+      {
+        "pattern_id": "sp_002",
+        "name": "英雄之旅",
+        "sections": ["现状→困境→觉醒→行动→改变"],
+        "suitable_for": ["故事类", "经历分享"],
+        "usage_frequency": "medium"
+      },
+      {
+        "pattern_id": "sp_003",
+        "name": "清单式",
+        "sections": ["引入→清单1→清单2→清单3→总结"],
+        "suitable_for": ["食谱推荐", "实用建议"],
+        "usage_frequency": "high"
+      }
+    ],
+
+    "emotion_triggers": [
+      {
+        "trigger_id": "et_001",
+        "emotion": "共鸣感",
+        "techniques": ["真实经历", "具体场景", "情感细节"],
+        "examples": [
+          "半夜父亲乱跑，我24小时待命",
+          "送走父母后，老伴一句话让我红了眼"
+        ],
+        "effectiveness": 9.8
+      },
+      {
+        "trigger_id": "et_002",
+        "emotion": "紧迫感",
+        "techniques": ["时间限制", "错过损失", "季节性"],
+        "examples": [
+          "春天养肝错过再等一年",
+          "50岁以后再注意就晚了"
+        ],
+        "effectiveness": 8.5
+      },
+      {
+        "trigger_id": "et_003",
+        "emotion": "获得感",
+        "techniques": ["具体方法", "可操作步骤", "即时可用"],
+        "examples": [
+          "这3个食疗方，今天就能做",
+          "记住这5点，春天养肝不用愁"
+        ],
+        "effectiveness": 9.0
+      }
+    ]
+  }
+}
